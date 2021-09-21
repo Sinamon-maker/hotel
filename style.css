@@ -24,7 +24,7 @@ h3 {
   line-height: 1.463rem;
   line-height: 1.5rem;
   text-transform: uppercase;
-  color: rgba(31, 32, 62);
+  color: rgb(31, 32, 62);
   margin-bottom: 0.5rem;
   margin-top: 0.8rem;
 }
@@ -280,29 +280,3 @@ margin-top: 0.25rem;
   margin: 0;
 }
 
-/*checkbox*/
-.checkbox-content{
-  width: 2rem;
-  height: 2rem;
-  border: 1px solid gba(31, 32, 62, 0.25);
-  border-radius: 4px;
-display: flex;
-justify-content: center;
-align-items: center;
-position: relative;
-padding: 0;
-margin: 0;
-}
-.checkbox{
-opacity: 0;
-
-}
-.checkbox-selected{
-   border: 1px solid #BC9CFF;
-}
-.checkbox-selected::before{
-  content: url("./images/Vector\(1\).svg");
-  position: absolute;
-  right: 0.4rem;
-  bottom: -0.3rem;
-}
