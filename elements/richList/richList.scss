@@ -1,0 +1,49 @@
+.list-header{
+  margin-bottom: 1.6rem;
+}
+
+.list-item--expand{
+  @extend %list-item;
+  display: flex;
+  margin-top: 1rem;
+}
+
+.checkbox{
+  opacity: 0;
+}
+
+.checkbox-content{
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $dark25;
+  border-radius: 4px;
+  position: relative;
+  margin-right: 1rem;
+}
+
+.checkbox--selected{
+  border: 1px solid $color-purple;
+
+  &::before{
+ position: absolute;
+ content: url('/images/Vector(1).svg');
+  }
+}
+
+.list--rich{
+   @extend %list;
+  .list--rich__text-bold{
+@include fonts(1.4rem,700 ,1.8rem, $dark75 );
+margin-top: 0;
+ margin-bottom: 1rem;
+  }
+
+  .list--rich__text-small{
+    @include fonts(1.2rem,400 ,1.4rem, $dark50 );
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+}

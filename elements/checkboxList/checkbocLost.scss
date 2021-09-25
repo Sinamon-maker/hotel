@@ -1,0 +1,44 @@
+.list-header{
+  margin-bottom: 1.6rem;
+}
+
+.list-item--expand{
+  @extend %list-item;
+  display: flex;
+  margin-top: 1rem;
+}
+
+
+
+
+.list--checkboxes{
+   @extend %list;
+  .list--checkboxes__text{
+@include fonts(1.4rem,400 ,1.8rem, $dark50 );
+  }
+}
+
+.checkbox{
+  opacity: 0;
+}
+
+.checkbox-content{
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $dark25;
+  border-radius: 4px;
+  position: relative;
+  margin-right: 1rem;
+}
+
+.checkbox--selected{
+  border: 1px solid $color-purple;
+
+  &::before{
+ position: absolute;
+ content: url('/images/Vector(1).svg');
+  }
+}

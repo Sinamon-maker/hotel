@@ -9,6 +9,26 @@ $dark05: rgba(31,32,65, 0.05);
 $color-purple: #BC9CFF;
 $color-green: #6FCF97;
 
+@mixin fonts($size, $weight, $height, $color) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $height;
+  color: $color;
+}
+
+%list{
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+%list-item{
+  margin: 0;
+}
+
+
 html {
   font-size: 62.5%;
 }
@@ -17,33 +37,24 @@ html {
   box-sizing: border-box;
 }
 
+body {  font-family: "Montserrat", sans-serif;
+  @include fonts(1.4rem,400 ,2.4rem, $dark75 );
 
-
-body {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.4rem;
-  line-height: 2.4rem;
-  font-weight: 400;
-  color: rgba(31, 32, 62, 0.75);
 }
 
 h3 {
-  font-size: 1.2rem;
-  font-weight: bold;
-  line-height: 1.463rem;
-  line-height: 1.5rem;
+   @include fonts(1.2rem, bold ,1.5rem, $dark100 );
   text-transform: uppercase;
-  color: rgb(31, 32, 62);
   margin-bottom: 0.5rem;
   margin-top: 0.8rem;
 }
 
 .input-item {
   outline: none;
-  border: 1px solid rgba(31, 32, 62, 0.25);
+  border: 1px solid $dark25;
   border-radius: 4px;
   padding: 1.2rem 0 0.8rem 1.5rem;
-  color: rgba(31, 32, 62, 0.75);
+  color: $dark75;
   width: 100%;
   position: relative;
   font-size: 1.4rem;
@@ -52,7 +63,7 @@ h3 {
 
 .input-item:focus,
 .input-item:hover {
-  border: 1px solid rgba(31, 32, 62, 0.5);
+  border: 1px solid $dark50;
 }
 
 /*dropdown header icon*/
@@ -86,7 +97,7 @@ h3 {
 }
 
 .btn-round-add{
- border: 1px solid rgba(31, 32, 62, 0.5);
+ border: 1px solid $dark05;
  background-color: white;
 }
 
@@ -99,17 +110,14 @@ h3 {
   border-radius: 70%;
   background-color: white;
   text-align: center;
-   font-family: "Montserrat", sans-serif;
-  font-size: 1.2rem;
-  font-weight: 400;
-  line-height: 1.5rem;
-  color: rgba(31, 32, 62, 0.5);
-}
+  font-family: "Montserrat", sans-serif;
+  @include fonts(1.2rem,400 ,1.5rem, $dark05 );
+  }
 
 .btn-page-selected{
-font-weight: 700;
-  color: white;
-  background-color: #BC9CFF;
+ font-weight: 700;
+color: white;
+background-color: $color-purple;
 }
 
 .btn-page-arrow{
@@ -125,12 +133,9 @@ font-weight: 700;
 }
 
 .btn-dropdown{
-  color: #BC9CFF;
-  font-weight: 700;
+  @include fonts(1.2rem,700 ,1.5rem, $color-purple );
   text-transform: uppercase;
   background-color: transparent;
-  font-size: 1.2rem;
-  line-height: 1.5rem;
   padding: 1.3rem 0;
 }
 
@@ -155,7 +160,7 @@ background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 color: white;
 }
 
-.btn-clickme-filled:disabled{
+.btn-clickme-filled:hover{
   opacity: 0.5;
 }
 
@@ -176,18 +181,18 @@ height: 4.4rem;
 }
 
 .btn-clickme-bordered{
-color: #BC9CFF;
+color: $color-purple;
 background: white;
 padding: 1.3rem 1.7rem 1.2rem 1.8rem;
 }
 
 .btn-clickme-blank{
-color: #BC9CFF;
+color: $color-purple;
 background-color: transparent;
 }
 
 .btn-clickme-blank:disabled{
-  color: rgba(31, 32, 62, 0.5);
+  color: $dark50;
 }
 
 .btn-expanded{
@@ -212,7 +217,6 @@ background-color: transparent;
 
 .icon-item path,
 .icon-arrow path
-
 {
   fill: inherit;
 }
@@ -220,6 +224,7 @@ background-color: transparent;
 /*dropdown-items*/
 
 .dropdown-item{
+   @extend %list-item;
    width: 100%;
   display: flex;
   justify-content: space-between;
@@ -235,7 +240,7 @@ background-color: transparent;
 }
 .btn-group{
   display: flex;
-   padding-bottom: 0.7rem;
+  padding-bottom: 0.7rem;
 
 }
 
@@ -247,14 +252,14 @@ background-color: transparent;
 
 /*list*/
 
-.list{
-  width: 100%;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.list-item{
-  margin: 0;
+
+
+
+
+
+
+.dropdown{
+  position: relative;
 }
 
 .list-dropdown{
@@ -262,27 +267,22 @@ background-color: transparent;
   border-top: none;
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
-
-
-}
-.dropdown{
-  position: relative;
 }
 
 .dropdown__content{
-    max-height: 0;
+ max-height: 0;
 overflow: hidden;
 opacity: 0;
 transition: all 0.3s;
 }
 
 .dropdown .input-item{
-   border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
 .dropdown--opened .dropdown__content{
-max-height: 100vh;
+  max-height: 100vh;
   opacity: 1;
   position: absolute;
   background-color: white;
@@ -305,8 +305,9 @@ max-height: 100vh;
 .comfort{
   display: flex;
 }
+
 .icon-comfort{
-fill: #BC9CFF;
+fill: $color-purple;
 margin-top: 0.25rem;
 
 }
@@ -315,7 +316,7 @@ margin-top: 0.25rem;
   margin-left: 2rem;
   font-size: 1.4rem;
   line-height: 2.4rem;
-  color: rgba(31, 32, 62, 0.75);
+  color: $dark75;
 }
 
 .comfort__title{
@@ -340,11 +341,13 @@ margin-top: 0.25rem;
   align-items: center;
   position: relative;
 }
+
 .radio-content-checked{
   border: 1px solid $color-purple;
 }
+
 .radio-content-checked::before{
-  content: url('./images/Rectangle\ 2.1.svg');
+content: url('./images/Rectangle\ 2.1.svg');
 fill: $color-purple;
 position: absolute;
 right: 0.28rem;
@@ -367,6 +370,7 @@ top: -0.2rem;
 .checkbox{
   opacity: 0;
 }
+
 .checkbox-content{
   width: 2rem;
   height: 2rem;
@@ -378,15 +382,30 @@ top: -0.2rem;
   position: relative;
   margin-right: 1rem;
 }
-.checkbox-selected{
+
+.checkbox--selected{
   border: 1px solid $color-purple;
-}
-.checkbox-selected::before{
-position: absolute;
-content: url('/images/Vector(1).svg');
+
+  &::before{
+ position: absolute;
+ content: url('/images/Vector(1).svg');
+  }
 }
 
-.expandable__item{
+.expandable{
+  width: 100%;
+  position: relative;
+
+  &::after{
+content: url('/images/expand_more.svg');
+  position: absolute;
+top: -0.5rem;
+  right: 1rem;
+  }
+}
+
+.list-item--expand{
+  @extend %list-item;
   display: flex;
   margin-top: 1rem;
 }
@@ -395,10 +414,6 @@ content: url('/images/Vector(1).svg');
   margin-bottom: 2rem;
 }
 
-.expandable{
-  width: 100%;
-  position: relative;
-}
 
 .expandable__content{
   max-height: 0;
@@ -407,21 +422,22 @@ opacity: 0;
 transition: all 0.3s;
 }
 
-.expandable--opened .expandable__content{
-  max-height: 100vh;
+.expandable--opened{
+  &.expandable__content{
+ max-height: 100vh;
   opacity: 1;
-}
+  }
 
-.expandable::after{
-  content: url('/images/expand_more.svg');
+  &::after{
+content: url('/images/expand_more(2).svg');
   position: absolute;
 top: -0.5rem;
   right: 1rem;
+  }
 }
 
-.expandable-opened::after{
-  content: url('/images/expand_more(2).svg');
-  position: absolute;
-top: -0.5rem;
-  right: 1rem;
+.list-header{
+  margin-bottom: 1.6rem;
 }
+
+
