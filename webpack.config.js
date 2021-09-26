@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
    watch: true,
-   entry: "./index.js",
+   entry: "./index.pug",
    output: {
        filename: "bundle.js",
        path: path.resolve(__dirname,'build'),
@@ -26,6 +26,11 @@ module.exports = {
                 use: ['babel-loader'],
             },
             {
+                test: /\.pug$/,
+                use: ['pug-loader'],
+
+            },
+            {
                 test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
                 type: 'asset/resource',
             },
@@ -42,7 +47,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'webpack Boilerplate',
-            template: path.resolve(__dirname, './index.html'), // шаблон
+            template: path.resolve(__dirname, './index.pug'), // шаблон
             filename: 'index.html', // название выходного файла
         }),
         new MiniCssExtractPlugin({
