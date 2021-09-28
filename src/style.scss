@@ -101,32 +101,6 @@ h3 {
  background-color: white;
 }
 
-.btn-round-page{
-  background-color: white;
-}
-.btn-page{
-  width: 4rem;
-  height: 4rem;
-  border-radius: 70%;
-  background-color: white;
-  text-align: center;
-  font-family: "Montserrat", sans-serif;
-  @include fonts(1.2rem,400 ,1.5rem, $dark05 );
-  }
-
-.btn-page-selected{
- font-weight: 700;
-color: white;
-background-color: $color-purple;
-}
-
-.btn-page-arrow{
-   width: 4rem;
-  height: 4rem;
-
-  border-radius: 70%;
-   background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-}
 
 .btn-round:disabled{
   opacity: 0.5;
@@ -146,61 +120,6 @@ background-color: $color-purple;
   background-color: transparent;
 }
 
-.btn-clickme{
-  text-transform: uppercase;
-  font-size: 1.2rem;
-  font-weight: 700;
-  line-height: 1.5rem;
-  padding: 1.4rem 2.1rem 1.5rem 1.9rem;
-  border-radius: 2.2rem;
-}
-
-.btn-clickme-filled{
-background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-color: white;
-}
-
-.btn-clickme-filled:hover{
-  opacity: 0.5;
-}
-
-.btn-clickme-wrapper{
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  padding-left: 0;
-  padding-right: 0;
-width: 9.9rem;
-height: 4.4rem;
-}
-
-.btn-clickme-wrapper:disabled{
-  opacity: 0.5;
-}
-
-.btn-clickme-bordered{
-color: $color-purple;
-background: white;
-padding: 1.3rem 1.7rem 1.2rem 1.8rem;
-}
-
-.btn-clickme-blank{
-color: $color-purple;
-background-color: transparent;
-}
-
-.btn-clickme-blank:disabled{
-  color: $dark50;
-}
-
-.btn-expanded{
-  position: relative;
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  color: white;
-  width: 100%;
-}
 
 /*icons*/
 
@@ -347,7 +266,7 @@ margin-top: 0.25rem;
 }
 
 .radio-content-checked::before{
-content: url('./images/Rectangle\ 2.1.svg');
+content: url('/src/images/Rectangle\ 2.1.svg');
 fill: $color-purple;
 position: absolute;
 right: 0.28rem;
@@ -388,7 +307,7 @@ top: -0.2rem;
 
   &::before{
  position: absolute;
- content: url('/images/Vector(1).svg');
+ content: url('/src/images/Vector(1).svg');
   }
 }
 
@@ -397,7 +316,7 @@ top: -0.2rem;
   position: relative;
 
   &::after{
-content: url('/images/expand_more.svg');
+content: url('/src/images/expand_more.svg');
   position: absolute;
 top: -0.5rem;
   right: 1rem;
@@ -429,7 +348,7 @@ transition: all 0.3s;
   }
 
   &::after{
-content: url('/images/expand_more(2).svg');
+content: url('/src/images/expand_more(2).svg');
   position: absolute;
 top: -0.5rem;
   right: 1rem;

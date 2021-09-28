@@ -1,0 +1,5 @@
+
+mixin buttonMixin(data={text:''})
+  -var buutn=data.class||'btn btn_round btn_round-minus'
+  button(class=buutn)= data.text
+  button(class=buutn)(type=data.type||'button' name='name')&attributes(attributes)=data.text

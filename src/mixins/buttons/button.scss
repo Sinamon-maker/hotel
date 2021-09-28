@@ -1,0 +1,129 @@
+@import "../../style.scss";
+
+.btn{
+   font-family: "Montserrat", sans-serif;
+  outline: none;
+  cursor: pointer;
+  border: 0;
+}
+
+.btn_clickme{
+   text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  display: flex;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  justify-content: center;
+  align-items: center;
+  width: 9.9rem;
+  height: 4.4rem;
+  border-radius: 2.2rem;
+  color: white;
+
+}
+.btn_scaled{
+background: white;
+color: $color-purple;
+transform: scaleX(0.95) scaleY(0.9);
+}
+
+.btn_clickme:hover{
+  opacity: 0.5;
+}
+
+.btn_expanded{
+
+  width: 100%;
+  border-radius: 2.2rem;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  padding: 1.4rem 0;
+  text-align: center;
+
+  position: relative;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  list-style: 1.5;
+  text-transform: uppercase;
+}
+.btn_expanded::after{
+  position: absolute;
+  top: 30%;
+  right: 2rem;
+  content: url('./images/arrow_forward(1).svg');
+}
+
+.btn_page{
+  width: 4rem;
+  height: 4rem;
+  border-radius: 70%;
+  background-color: white;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  @include fonts(1.2rem,400 ,1.5rem, $dark50 );
+  position: relative;
+
+  }
+
+  .btn_page-choosed{
+    font-weight: 700;
+    color: white;
+    background-color: $color-purple;
+  }
+
+  .btn_page-forward{
+   width: 4rem;
+  height: 4rem;
+  border-radius: 70%;
+   background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+}
+.btn_page-forward::after{
+   position: absolute;
+  top: 30%;
+  right: 30%;
+  content: url('./images/arrow_forward(1).svg');
+}
+
+.btn_unbordered{
+background-color: transparent;
+text-transform: uppercase;
+
+@include fonts(1.2rem,700 ,1.5rem, $color-purple );
+}
+
+.btn_unbordered:disabled{
+  color: $dark50;
+}
+
+.btn_round{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 70%;
+   border: 1px solid $dark25;
+ background-color: white;
+ position: relative;
+}
+.btn_round-add::after{
+  position: absolute;
+  content: url('./images/+.svg');
+  top: 17%;
+  right: 34%;
+
+}
+.btn_round-minus::after{
+  position: absolute;
+  content: url('./images/-.svg');
+  top: 11%;
+  right: 38%;
+
+}
+
+.btn_round-minus:disabled{
+  opacity: 0.5;
+}
+

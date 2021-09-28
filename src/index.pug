@@ -1,14 +1,17 @@
+
+include mixins/buttons/button.pug
+
 doctype html
 html
 head
 meta(charset = 'utf-8')
 meta(name='viewport', content="initial-scale=1.0, width=device-width")
 title Webpack app
-script(src='/index.js')
-style
-      include style.scss
+
 body
 h3 test pug
++buttonMixin({text: 'click'})
++buttonMixin()
 script
-      include index.js
+      include ./index.js
 
