@@ -1,0 +1,24 @@
+@import "../../style.scss";
+
+.checkbox{
+  opacity: 0;
+}
+
+.checkbox_wrapper{
+  width: 2rem;
+  height: 2rem;
+  @include flex();
+  border: 1px solid $dark25;
+  border-radius: 4px;
+  position: relative;
+  margin-right: 1rem;
+}
+
+.checkbox_selected{
+  border: 1px solid $color-purple;
+
+  &::before{
+ position: absolute;
+ content: url('/src/images/Vector(1).svg');
+  }
+}

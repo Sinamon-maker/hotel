@@ -5,6 +5,7 @@ import "./mixins/list/list";
 import "./mixins/listItem/listItem";
 import "./mixins/listHeading/listHeading";
 import "./mixins/pageList/pageList";
+import "./mixins/checkbox/checkbox";
 
 console.log('show')
 

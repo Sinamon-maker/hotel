@@ -4,6 +4,7 @@ include mixins/rateButtons/ratebuttons.pug
 include mixins/listHeading/listHeading.pug
 include mixins/listItem/listItem.pug
 include mixins/pageList/pageList.pug
+include mixins/checkbox/checkbox.pug
 
 doctype html
 html
@@ -21,6 +22,7 @@ h3 test pug
 +listItem()
   div='hhhh'
 +pageList()
++checkbox()
 script
       include ./index.js
 
