@@ -143,10 +143,9 @@ width: 2.5rem;
 }
 
 .btn_dropdown_up{
-border: 1px solid gray;
-background-color: green;
-width: 2.5rem;
-  height: 2.5rem;
+  background-color: white;
+width: 2rem;
+  height: 2rem;
   @include flex();
 }
 
@@ -155,10 +154,9 @@ width: 2.5rem;
 }
 
 .btn_dropdown_down{
-border: 1px solid gray;
-background-color: green;
-width: 2.5rem;
-  height: 2.5rem;
+   background-color: white;
+width: 2rem;
+  height: 2rem;
  @include flex();
 }
 

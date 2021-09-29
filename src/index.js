@@ -9,6 +9,7 @@ import "./mixins/checkbox/checkbox";
 import "./mixins/checkboxList/checkboxList";
 import "./mixins/richList/richList";
 import "./mixins/bulletList/bulletList";
+import "./mixins/expandableList/expandableList";
 
 console.log('show')
 

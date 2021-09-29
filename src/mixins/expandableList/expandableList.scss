@@ -1,0 +1,35 @@
+@import "../../style.scss";
+
+.expandable-list{
+  width: 100%;
+  position: relative;
+
+  .btn_dropdown_down{
+    position: absolute;
+    top: -0.3rem;
+    right: 2rem;
+  }
+
+.list-checkboxes{
+max-height: 0;
+overflow: hidden;
+opacity: 0;
+transition: all 0.3s;
+}
+
+}
+
+.expandable-list_opened{
+
+.btn_dropdown_down::after{
+content: url('./images/expand_more.svg');
+}
+
+  .list-checkboxes{
+  max-height: 100vh;
+  opacity: 1;
+  position: absolute;
+  background-color: white;
+}
+}
+

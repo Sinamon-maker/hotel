@@ -2,19 +2,15 @@ include ../listHeading/listHeading.pug
 include ../listItem/listItem.pug
 include ../checkbox/checkbox.pug
 
-mixin checkboxList()
-  +listHeading('checkbox buttons')
+mixin checkboxList(data={title:'checkbox buttons', list:['ggjk', 'jgjg','awef']})
+  -var values = data.list
+
+  +listHeading(data.title)
   ul.list-checkboxes
-    +listItem()
-      +checkbox()
-      .list-checkboxes__text='Можно курить'
-    +listItem()
-      +checkbox()
-      .list-checkboxes__text='Можно с питомцами'
-       ul.list-checkboxes
-    +listItem()
-      +checkbox()
-      .list-checkboxes__text Можно пригласить гостей
-        br
-        | (до 10 человек)
+    each val in values
+      +listItem()
+        +checkbox()
+        .list-checkboxes__text= val
+
+
 
