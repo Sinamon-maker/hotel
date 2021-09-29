@@ -10,6 +10,7 @@ include mixins/richList/richList.pug
 include mixins/bulletList/bulletList.pug
 include mixins/expandableList/expandableList.pug
 include mixins/simpleList/simpleList.pug
+include mixins/label/label.pug
 
 doctype html
 html
@@ -20,18 +21,9 @@ title Webpack app
 
 body
 h3 test pug
-+buttonMixin({text: 'click'})
-+buttonMixin()
-+rateStars()
-+listHeading('bullet list')
-+listItem()
-  div='hhhh'
-+listItem()
-  jgjgjjghfghfh
-+pageList()
-+richList()
 +bulletList()
 +simpleList()
++label()
 script
       include ./index.js
 

@@ -1,7 +1,13 @@
 const path = require('path')
 const {resolve} = path
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
+const isDev = process.env.NODE_ENV === 'development';
+const isProd = !isDev;
+
+const filename = (ext) => isDev? `[name].${ext}` : `[name].[contenthash].${ext}`
 
 module.exports = {
   watch: true,
@@ -9,7 +15,7 @@ module.exports = {
     main: path.resolve(__dirname, "./src/index.js"),
   },
   output: {
-    filename: "index.bundle.js",
+    filename: `./js/${filename("js")}`,
     path: path.resolve(__dirname, "dist"),
     publicPath: "/",
   },
@@ -39,9 +45,10 @@ module.exports = {
         type: "asset/resource",
       },
       {
-        test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
+        test: /\.(woff(2)?|eot|ttf|otf|svg|png)$/,
         type: "asset/inline",
       },
+
       {
         test: /\.(scss|css)$/i,
         use: [
@@ -57,11 +64,28 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: "webpack Boilerplate",
-      template: path.resolve(__dirname, "./src/index.pug"), // шаблон
+      template: path.resolve(__dirname, "/src/index.pug"), // шаблон
       filename: "index.html", // название выходного файла
+      minify: {
+        collapseWhitespace: isProd,
+      },
     }),
     new MiniCssExtractPlugin({
       filename: "css/main.css",
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: `${__dirname}/src/assets/images`,
+          to: "images",
+          noErrorOnMissing: true,
+        },
+        {
+          from: `${__dirname}/src/assets/fonts`,
+          to: "fonts",
+          noErrorOnMissing: true,
+        },
+      ],
     }),
   ],
 };

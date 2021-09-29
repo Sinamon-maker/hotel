@@ -1,0 +1,11 @@
+@import "../../style.scss";
+
+.logos{
+  display: flex;
+img{
+align-self: center;
+}
+  :first-child{
+    margin-right: 1.2rem;
+  }
+}

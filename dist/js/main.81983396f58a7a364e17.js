@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log("show");var e=document.createElement("h6");e.textContent="Как интересно!",document.getElementsByTagName("h3").append(e),console.log("hi")})();

@@ -11,6 +11,7 @@ import "./mixins/richList/richList";
 import "./mixins/bulletList/bulletList";
 import "./mixins/expandableList/expandableList";
 import "./mixins/simpleList/simpleList";
+import "./mixins/label/label";
 
 console.log('show')
 

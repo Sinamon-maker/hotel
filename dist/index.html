@@ -1,0 +1,29 @@
+<!DOCTYPE html><html></html><head><script defer="defer" src="/./js/main.81983396f58a7a364e17.js"></script><link href="/css/main.css" rel="stylesheet"></head><meta charset="utf-8"><meta name="viewport" content="initial-scale=1,width=device-width"><title>Webpack app</title><body></body><h3>test pug</h3><h3 class="list-heade">bullet list</h3><ul class="bullet-list"><li class="list-item_expanded"><div class="bullet-list__text">Нельзя с питомцами</div></li><li class="list-item_expanded"><div class="bullet-list__text">Без вечеринок и мероприятий</div></li><li class="list-item_expanded"><div class="bullet-list__text">Время прибытя - после 13:00,<br>а выезд до 12:00</div></li></ul><h3 class="title-list_simple">jjkjkh</h3><ul class="list-simple"><li class="list-simple__text">fdff</li><li class="list-simple__text">sadw</li><li class="list-simple__text">effsf</li><li class="list-simple__text">efwfefdfdf</li></ul><div class="logos">hjfjhgjfggjhhfjf</div><img src="./images/image(1).jpg"><script>import './style.scss'
+import show from './mixins/buttons/button'
+import "./mixins/rateButtons/ratebuttons";
+import "./mixins/list/list";
+import "./mixins/listItem/listItem";
+import "./mixins/listHeading/listHeading";
+import "./mixins/pageList/pageList";
+import "./mixins/checkbox/checkbox";
+import "./mixins/checkboxList/checkboxList";
+import "./mixins/richList/richList";
+import "./mixins/bulletList/bulletList";
+import "./mixins/expandableList/expandableList";
+import "./mixins/simpleList/simpleList";
+import "./mixins/label/label";
+
+console.log('show')
+
+const heading = document.createElement('h6')
+heading.textContent = 'Как интересно!'
+
+// добавляем заголовок в DOM
+const root = document.getElementsByTagName('h3')
+root.append(heading)
+
+
+//window.onload = function () {
+ // require("./mixins/buttons/button.js");
+//};
+show()</script>
