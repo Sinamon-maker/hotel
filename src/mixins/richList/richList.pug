@@ -1,0 +1,21 @@
+include ../listHeading/listHeading.pug
+include ../listItem/listItem.pug
+include ../checkbox/checkbox.pug
+
+mixin richList()
+  +listHeading('rich checkbox buttons')
+  ul.list-rich
+    +listItem()
+      +checkbox()
+      .list-rich__text
+        p.list-rich__text-bold="Широкий коридор"
+        p.list-rich__text-small Ширина коридоров в номере
+          br
+          | не менее 91см
+    +listItem()
+      +checkbox()
+      .list-rich__text
+        p.list-rich__text-bold="Помощник для инвалидов"
+        p.list-rich__text-small На 1 этаже вас встретит специалист
+          br
+          | и проводит до номера

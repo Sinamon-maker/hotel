@@ -1,0 +1,1 @@
+import "./richList.scss";
