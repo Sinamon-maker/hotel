@@ -127,3 +127,76 @@ text-transform: uppercase;
   opacity: 0.5;
 }
 
+.btn_forward{
+border: 1px solid gray;
+background-color: green;
+width: 2.5rem;
+  height: 2.5rem;
+  position: relative;
+}
+
+.btn_forward::after{
+  position: absolute;
+  content: url('./images/arrow_forward.png');
+  top: 15%;
+  right: 18%;
+}
+
+.btn_dropdown_up{
+border: 1px solid gray;
+background-color: green;
+width: 2.5rem;
+  height: 2.5rem;
+  @include flex();
+}
+
+.btn_dropdown_up::after{
+  content: url('./images/expand_more.svg');
+}
+
+.btn_dropdown_down{
+border: 1px solid gray;
+background-color: green;
+width: 2.5rem;
+  height: 2.5rem;
+ @include flex();
+}
+
+.btn_dropdown_down::after{
+
+  content: url('./images/expand_more(2).svg');
+}
+
+.btn_star{
+  background-color: white;
+width: 2rem;
+  height: 2rem;
+@include flex();
+
+}
+
+.btn_star::after{
+  content: url('./images/star_border.svg');
+}
+
+.btn_star_choosed{
+width: 2rem;
+  height: 2rem;
+@include flex();
+
+}
+
+.btn_star_choosed::after{
+  content: url('./images/star.svg');
+}
+
+.btn_dots{
+  background-color: white;
+width: 4rem;
+  height: 4rem;
+@include flex();
+}
+
+.btn_dots::after{
+  content: url('./images/png');
+}

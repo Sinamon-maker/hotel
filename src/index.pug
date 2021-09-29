@@ -1,5 +1,9 @@
 
 include mixins/buttons/button.pug
+include mixins/rateButtons/ratebuttons.pug
+include mixins/listHeading/listHeading.pug
+include mixins/listItem/listItem.pug
+include mixins/pageList/pageList.pug
 
 doctype html
 html
@@ -12,6 +16,11 @@ body
 h3 test pug
 +buttonMixin({text: 'click'})
 +buttonMixin()
++rateStars()
++listHeading('bullet list')
++listItem()
+  div='hhhh'
++pageList()
 script
       include ./index.js
 

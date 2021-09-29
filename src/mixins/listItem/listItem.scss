@@ -1,0 +1,8 @@
+@import "../../style.scss";
+
+.list-item_expanded{
+ @extend %list-item;
+  display: flex;
+  margin-top: 1rem;
+}
+

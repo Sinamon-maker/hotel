@@ -1,0 +1,10 @@
+include ../buttons/button.pug
+
+mixin rateStars(data=[])
+
+  .stars
+    +buttonMixin({kind:'star',option: 'star_choosed', text:''})
+    +buttonMixin({kind:'star',option: 'star_choosed', text:''})
+    +buttonMixin({kind:'star', text:''})
+    +buttonMixin({kind:'star', text:''})
+    +buttonMixin({kind:'star', text:''})

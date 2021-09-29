@@ -1,5 +1,13 @@
-mixin list
-  ul
-    li foo
-    li bar
-    li baz
+mixin list(data)
+
+-var classes = data
+
+  h3.list-header
+  ul.data
+    li.list-item_expanded
+      block
+    li.list-item_expanded
+      block
+    li.list-item_expanded
+      block
+

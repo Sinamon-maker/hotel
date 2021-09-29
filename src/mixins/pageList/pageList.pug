@@ -1,0 +1,11 @@
+include ../buttons/button.pug
+
+mixin pageList()
+
+  .pages
+    +buttonMixin({kind:'page',option: 'page-choosed', text:'1'})
+    +buttonMixin({kind:'page', text:'2'})
+    +buttonMixin({kind:'page', text:'3'})
+    +buttonMixin({kind:'dots', text:''})
+    +buttonMixin({kind:'page', text:'15'})
+    +buttonMixin({kind:'page', option: 'page-forward', text:''})

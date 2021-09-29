@@ -1,5 +1,9 @@
 
-mixin buttonMixin(data={text:''})
-  -var buutn=data.class||'btn btn_round btn_round-minus'
-  button(class=buutn)= data.text
-  button(class=buutn)(type=data.type||'button' name='name')&attributes(attributes)=data.text
+mixin buttonMixin(data={text:'', kind:'dots'})
+
+   - var classes1 = 'btn'+ ' btn_'+data.kind
+
+   - var classes2 = data.option ? ' btn_'+data.option: ''
+    -var classes = classes1+classes2
+
+    button(class=classes)(type=data.type||'button' name='name')&attributes(attributes)=data.text
