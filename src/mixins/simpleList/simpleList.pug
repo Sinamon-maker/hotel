@@ -1,0 +1,7 @@
+mixin simpleList(data = {title: 'jjkjkh', list:['fdff','sadw', 'effsf', 'efwfefdfdf']})
+  -var values = data.list
+
+  h3.title-list_simple= data.title
+  ul.list-simple
+    each val in values
+      li.list-simple__text= val

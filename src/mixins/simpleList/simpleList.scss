@@ -1,0 +1,19 @@
+@import "../../style.scss";
+
+.title-list_simple{
+
+}
+
+.list-simple{
+@extend %list;
+
+
+
+.list-simple__text{
+    @extend %list-item;
+    @include fonts(1.4rem,400 ,1.7rem, $dark50 );
+    margin-top: 2rem;
+    text-transform: capitalize;
+ }
+
+}

@@ -9,6 +9,7 @@ include mixins/checkboxList/checkboxList.pug
 include mixins/richList/richList.pug
 include mixins/bulletList/bulletList.pug
 include mixins/expandableList/expandableList.pug
+include mixins/simpleList/simpleList.pug
 
 doctype html
 html
@@ -28,11 +29,9 @@ h3 test pug
 +listItem()
   jgjgjjghfghfh
 +pageList()
-+checkbox()
-+checkboxList()
 +richList()
 +bulletList()
-+expandableList({title:'expandable list', list:['jhkh', 'kjkg','dafdsaf', 'dawead']})
++simpleList()
 script
       include ./index.js
 
