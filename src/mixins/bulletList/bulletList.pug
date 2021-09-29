@@ -1,0 +1,14 @@
+include ../listHeading/listHeading.pug
+include ../listItem/listItem.pug
+
+mixin bulletList()
+  +listHeading('bullet list')
+  ul.bullet-list
+    +listItem()
+      .bullet-list__text='Нельзя с питомцами'
+    +listItem()
+      .bullet-list__text='Без вечеринок и мероприятий'
+    +listItem()
+      .bullet-list__text Время прибытя - после 13:00,
+        br
+        | а выезд до 12:00

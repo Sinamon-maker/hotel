@@ -8,6 +8,7 @@ import "./mixins/pageList/pageList";
 import "./mixins/checkbox/checkbox";
 import "./mixins/checkboxList/checkboxList";
 import "./mixins/richList/richList";
+import "./mixins/bulletList/bulletList";
 
 console.log('show')
 

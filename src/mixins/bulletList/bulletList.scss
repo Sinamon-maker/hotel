@@ -1,0 +1,12 @@
+@import "../../style.scss";
+
+.bullet-list{
+   @extend %list;
+  li{
+    &::before{
+  content: url('./images/Rectangle\ 2.1\(1\).svg');
+  text-align: center;
+  margin-right: 1rem;
+    }
+  }
+}
