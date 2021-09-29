@@ -5,6 +5,7 @@ include mixins/listHeading/listHeading.pug
 include mixins/listItem/listItem.pug
 include mixins/pageList/pageList.pug
 include mixins/checkbox/checkbox.pug
+include mixins/checkboxList/checkboxList.pug
 
 doctype html
 html
@@ -21,8 +22,11 @@ h3 test pug
 +listHeading('bullet list')
 +listItem()
   div='hhhh'
++listItem()
+  jgjgjjghfghfh
 +pageList()
 +checkbox()
++checkboxList()
 script
       include ./index.js
 

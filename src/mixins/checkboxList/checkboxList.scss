@@ -1,0 +1,13 @@
+@import "../../style.scss";
+
+
+.list-checkboxes{
+width: 24rem;
+
+   @extend %list;
+  .list-checkboxes__text{
+@include fonts(1.4rem,400 ,1.8rem, $dark50 );
+  }
+}
+
+

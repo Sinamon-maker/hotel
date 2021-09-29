@@ -127,12 +127,6 @@ h3 {
 
 /*list*/
 
-
-
-
-
-
-
 .dropdown{
   position: relative;
 }
@@ -167,13 +161,6 @@ transition: all 0.3s;
  border: 1px solid $dark50;
 }
 
-
-/*pagination*/
-
-.page-content{
-  width: 100%;
-  display: flex;
-}
 
 /*comfort*/
 
@@ -242,30 +229,7 @@ top: -0.2rem;
 
 /*expandable checkboxes*/
 
-.checkbox{
-  opacity: 0;
-}
 
-.checkbox-content{
-  width: 2rem;
-  height: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid $dark25;
-  border-radius: 4px;
-  position: relative;
-  margin-right: 1rem;
-}
-
-.checkbox--selected{
-  border: 1px solid $color-purple;
-
-  &::before{
- position: absolute;
- content: url('/src/images/Vector(1).svg');
-  }
-}
 
 .expandable{
   width: 100%;

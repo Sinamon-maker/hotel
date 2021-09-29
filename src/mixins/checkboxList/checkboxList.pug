@@ -1,0 +1,18 @@
+include ../listHeading/listHeading.pug
+include ../listItem/listItem.pug
+include ../checkbox/checkbox.pug
+
+mixin checkboxList()
+  +listHeading('checkbox buttons')
+  ul.list-checkboxes
+    +listItem()
+      +checkbox()
+      .list-checkboxes__text='Можно курить'
+    +listItem()
+      +checkbox()
+      .list-checkboxes__text='Можно с питомцами'
+       ul.list-checkboxes
+    +listItem()
+      +checkbox()
+      .list-checkboxes__text='Можно пригласить гостей (до 10 человек)'
+
