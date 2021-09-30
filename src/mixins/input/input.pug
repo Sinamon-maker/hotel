@@ -1,0 +1,17 @@
+mixin input(data)
+
+  - var name = data.name||'name'
+  - var type = data.type||'text'
+  - var value = data.value||''
+  - var placeholder = data.placeholder||''
+  - var tabindex = data.tabindex||false
+  - var autofocused = data.autofocused||false
+
+
+  input(class="input"
+   type = type
+   name = name
+   value = value
+   placeholder = placeholder
+   tabindex = tabindex
+   autofocused = autofocused)

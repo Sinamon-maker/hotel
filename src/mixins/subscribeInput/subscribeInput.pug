@@ -1,0 +1,7 @@
+include ../input/input.pug
+include ../buttons/button.pug
+
+mixin subscribeInput()
+  .subscribe-content(tabindex=1)
+    +input({placeholder:'email', type:'email', name:'emmail'})
+    +buttonMixin({kind:'forward'})

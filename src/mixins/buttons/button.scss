@@ -140,16 +140,15 @@ text-transform: uppercase;
 }
 
 .btn_forward{
-border: 1px solid gray;
-background-color: green;
-width: 2.5rem;
+ width: 2.5rem;
   height: 2.5rem;
+  background-color: white;
   position: relative;
 }
 
 .btn_forward::after{
   position: absolute;
-  content: url('./images/arrow_forward.png');
+  content: url('./images/arrow_forward(2).svg');
   top: 15%;
   right: 18%;
 }

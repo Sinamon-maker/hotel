@@ -1,0 +1,19 @@
+@import "../../style.scss";
+
+.input{
+outline: none;
+  border: 1px solid $dark25;
+  border-radius: 4px;
+  padding: 1.2rem 1rem 0.8rem 1.5rem;
+  color: $dark75;
+  min-width: 2rem;
+  position: relative;
+  font-size: 1.4rem;
+  font-family: inherit;
+
+  &:focus,
+  &:hover{
+ border: 1px solid $dark50;
+  }
+}
+
