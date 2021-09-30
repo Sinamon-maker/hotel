@@ -1,0 +1,26 @@
+include ../../mixins/container/container.pug
+include ../../mixins/buttons/button.pug
+include ../../mixins/label/label.pug
+
+mixin header()
+  +container()
+    .header
+      +label()
+      ul.header__list
+        li.header__list-item
+          a(class='link' href='#' autofocus)  О нас
+        li.header__list-item.header__list-item_menu
+          a(class='link' href='#') Услуги
+        li.header__list-item
+          a(class='link' href='#') Вакансии
+        li.header__list-item
+          a(class='link' href='#') Новости
+        li.header__list-item.header__list-item_menu
+          a(class='link' href='#') Соглашение
+        li.header__list-item.header__btn-loged
+          +buttonMixin({kind: 'gradiented_bordered', text: 'Войти'})
+        li.header__list-item.header__btn-loged
+          +buttonMixin({kind: 'gradiented', text: 'Зарегистрироваться'})
+        li.header__list-item.header__list-item_user
+          a(class='link' href='#') Юлий Цезарь
+

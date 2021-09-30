@@ -12,6 +12,7 @@ include mixins/expandableList/expandableList.pug
 include mixins/simpleList/simpleList.pug
 include mixins/label/label.pug
 include mixins/container/container.pug
+include components/header/header.pug
 
 doctype html
 html
@@ -25,9 +26,12 @@ h3 test pug
 +bulletList()
 +simpleList()
 +label()
++buttonMixin({kind: 'gradiented', text: 'Зарегистрироваться'})
++buttonMixin({kind: 'gradiented_bordered', text: 'Pfhtuhhh'})
 +container()
   h3 kjhkjhkhkhjk
   div kjkjhaldhjadhaljkkkkkkkkchjaklchklachaklch
++header()
 script
       include ./index.js
 

@@ -7,47 +7,59 @@
   border: 0;
 }
 
-.btn_clickme{
-   text-transform: uppercase;
-  font-size: 1.2rem;
-  font-weight: 700;
-  line-height: 1.5rem;
-  display: flex;
+.btn_gradiented{
+  text-transform: uppercase;
+  @include fonts(1.2rem,700 ,1.5rem, white );
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  justify-content: center;
-  align-items: center;
-  width: 9.9rem;
-  height: 4.4rem;
+ text-align: center;
+  padding: 1.4rem 2rem 1.5rem;
   border-radius: 2.2rem;
-  color: white;
+ }
 
-}
-.btn_scaled{
-background: white;
-color: $color-purple;
-transform: scaleX(0.95) scaleY(0.9);
+ .btn_gradiented_bordered{
+@include fonts(1.2rem,700 ,1.5rem, $color-purple );
+ text-transform: uppercase;
+ text-align: center;
+ padding: 1.4rem 2rem 1.5rem;
+ border-radius: 2.2rem;
+  position: relative;
+ background-color: white;
+ }
+
+ .btn_gradiented_bordered::before{
+ content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  border-radius:2.2rem;
+  padding:0.3rem;
+  background:linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  -webkit-mask:
+     linear-gradient(#fff 0 0) content-box,
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
 }
 
-.btn_clickme:hover{
+.btn_gradiented:hover,
+.btn_gradiented_bordered:hover{
   opacity: 0.5;
 }
 
 .btn_expanded{
-
   width: 100%;
   border-radius: 2.2rem;
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   padding: 1.4rem 0;
   text-align: center;
-
+  padding: 1.4rem 2rem 1.5rem;
   position: relative;
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  color: white;
-  font-size: 1.2rem;
-  font-weight: bold;
-  list-style: 1.5;
+  @include fonts(1.2rem,700 ,1.5rem, white );
   text-transform: uppercase;
 }
+
 .btn_expanded::after{
   position: absolute;
   top: 30%;

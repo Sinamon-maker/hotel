@@ -1,0 +1,79 @@
+@import "../../style.scss";
+
+.header{
+  width: 100%;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 10px 20px rgba(31,32,65,0.05);
+ .header__list-item_user{
+     display: none;
+    }
+
+}
+
+.header_unloged{
+ .header__list-item_user{
+     display: none;
+    }
+}
+
+.header_loged{
+
+ .header__list-item_user{
+     display: inline-block;
+    }
+
+  .header__btn-loged{
+    display: none;
+     }
+}
+
+.header__list{
+    @extend %list;
+
+   li{
+     margin-left: 2rem;
+     align-self: center;
+   }
+
+   &:last-child{
+     margin-left: 0
+   }
+}
+
+.header__list-item{
+  @extend %list-item;
+  display: inline-block;
+}
+
+.link{
+  text-decoration: none;
+  @include fonts(1.4rem, 400, 1.7rem, $dark50);
+
+  &:focus{
+  outline: none;
+  font-weight: bold;
+  color: $dark75;
+  }
+
+  &:hover{
+  color: $dark75;
+  }
+}
+
+.header__list-item_menu{
+
+  .link::after{
+content: url('./images/expand_more.svg');
+padding-left: 0.3rem;
+
+  }
+}
+
+.header__list-item_user{
+  border-left: 1px solid rgba(31,32,65,0.1);
+  padding-left: 2rem;
+}
