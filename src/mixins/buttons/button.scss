@@ -207,3 +207,31 @@ width: 4rem;
 .btn_dots::after{
   content: url('./images/png');
 }
+
+.btn_like{
+   background-color: white;
+   color: $color-purple;
+  border-radius: 1.5rem;
+  border: 1px solid $color-purple;
+  @include flex();
+  padding-right: 1rem;
+
+}
+.btn_like::before{
+  content: url('./images/favorite.svg');
+  margin-right: 0.5rem;
+  }
+
+  .btn_dislike{
+   background-color: white;
+   color: $dark25;
+  border-radius: 1.5rem;
+  border: 1px solid $dark25;
+  @include flex();
+  padding-right: 1rem;
+
+}
+.btn_dislike::before{
+  content: url('./images/favorite_border.svg');
+  margin-right: 0.5rem;
+  }
