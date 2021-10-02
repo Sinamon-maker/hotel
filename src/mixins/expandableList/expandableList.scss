@@ -7,7 +7,7 @@
   .btn_dropdown_down{
     position: absolute;
     top: -0.3rem;
-    right: 2rem;
+    right: 1rem;
   }
 
 .list-checkboxes{
@@ -23,12 +23,13 @@ transition: all 0.3s;
 
 .btn_dropdown_down::after{
 content: url('./images/expand_more.svg');
+
 }
 
   .list-checkboxes{
   max-height: 100vh;
   opacity: 1;
-  position: absolute;
+
   background-color: white;
 }
 }

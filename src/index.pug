@@ -1,24 +1,10 @@
 
-include mixins/buttons/button.pug
-include mixins/rateButtons/ratebuttons.pug
-include mixins/listHeading/listHeading.pug
-include mixins/listItem/listItem.pug
-include mixins/pageList/pageList.pug
-include mixins/checkbox/checkbox.pug
-include mixins/checkboxList/checkboxList.pug
-include mixins/richList/richList.pug
-include mixins/bulletList/bulletList.pug
+include mixins/dropdown/dropdownMenu/dropdownMenu.pug
 include mixins/expandableList/expandableList.pug
-include mixins/simpleList/simpleList.pug
-include mixins/label/label.pug
-include mixins/container/container.pug
-include components/header/header.pug
-include mixins/input/input.pug
 include mixins/inputWithButton/inputWithButton.pug
-include mixins/subscription/subscription.pug
-include components/footer/footer.pug
-include components/underFooter/underFooter.pug
-include mixins/dropdownMenu/dropdownMenu.pug
+include mixins/dropdown/dropdown.pug
+include mixins/radioGroup/radioGroup.pug
+include mixins/toggle/toggle.pug
 
 doctype html
 html
@@ -30,13 +16,15 @@ title Webpack app
 body
 h3 test pug
 
-+header()
-+header()
-+input({placeholder:'name'})
-+inputWithButton()
-+checkboxList()
-+buttonMixin()
+
+
++dropdown()
++radioGroup()
 +dropdownMenu()
+
++expandableList()
++inputWithButton()
++dropdown()
 script
       include ./index.js
 

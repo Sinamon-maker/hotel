@@ -1,0 +1,51 @@
+@import "../../style.scss";
+
+.toggle{
+  display: flex;
+}
+
+.toggle__content{
+
+width: 4rem;
+height: 2rem;
+border-radius: 1rem;
+display: flex;
+justify-content: flex-end;
+position: relative;
+margin-right: 1rem;
+
+
+  .toggle__input{
+opacity: 0;
+  }
+  .toggle__label{
+
+  }
+}
+
+.toggle__content-unchecked{
+border: 1px solid $dark50;
+&::before{
+  content: url('./images/Rectangle 2.1(1).svg');
+  position: absolute;
+  bottom: -0.4rem;
+  left: 0.3rem;
+}
+
+}
+
+.toggle__content-checked{
+  border: 1px solid $color-purple;
+  justify-content: flex-start;
+
+  .toggle__content-checked::before{
+    display: none;
+  }
+}
+
+.toggle__content-checked::after{
+  content: url('./images/Rectangle 2.1.svg');
+  position: absolute;
+  right: 0.3rem;
+  bottom: -0.4rem;
+}

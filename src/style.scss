@@ -189,43 +189,6 @@ margin-top: 0.25rem;
 }
 
 /*radio*/
-.radio{
-  margin: 2rem;
-  opacity: 0;
-}
-.radio-content{
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  border: 1px solid $dark25;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-.radio-content-checked{
-  border: 1px solid $color-purple;
-}
-
-.radio-content-checked::before{
-content: url('/src/images/Rectangle\ 2.1.svg');
-fill: $color-purple;
-position: absolute;
-right: 0.28rem;
-top: -0.2rem;
-
-}
-
-.label-radio{
-  margin-left: 1rem;
-  margin-right: 2rem;
-}
-
-.radio-group{
-  width: 100%;
-  display: flex;
-}
 
 /*expandable checkboxes*/
 

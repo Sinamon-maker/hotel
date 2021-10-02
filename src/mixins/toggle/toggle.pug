@@ -1,0 +1,10 @@
+mixin toggle(data = 'checked')
+
+  -var classes= 'toggle__content'+ ' '+'toggle__content-'+data || 'toggle__content'+ ' '+'toggle__content-unchecked'
+
+
+  .toggle
+    div(class=classes)
+      input.toggle__input(id ='toggle'
+      type= 'checkbox')
+    label.toggle__label(for = 'toggle') Получать спецпредложения

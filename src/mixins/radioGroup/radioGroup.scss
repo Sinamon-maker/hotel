@@ -1,0 +1,43 @@
+@import "../../style.scss";
+
+.radio-group{
+   display: flex;
+   width: 100%;
+
+  .radio-group__content{
+     width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid $dark25;
+  @include flex();
+  position: relative;
+  }
+
+  .radio-group__checked{
+border: 1px solid $color-purple;
+  }
+
+  .radio-group__checked::before{
+content: url('/src/images/Rectangle\ 2.1.svg');
+fill: $color-purple;
+position: absolute;
+right: 0.28rem;
+top: -0.2rem;
+  }
+
+.radio-group__input{
+margin: 2rem;
+  opacity: 0;
+}
+.radio-group__label{
+margin-left: 1rem;
+  margin-right: 2rem;
+}
+}
+
+
+
+
+
+
+

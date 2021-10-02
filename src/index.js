@@ -1,5 +1,5 @@
-import './style.scss'
-import show from './mixins/buttons/button'
+import "./style.scss";
+import show from "./mixins/buttons/button";
 import "./mixins/rateButtons/ratebuttons";
 import "./mixins/list/list";
 import "./mixins/listItem/listItem";
@@ -19,20 +19,21 @@ import "./mixins/inputWithButton/inputWithButton";
 import "./mixins/subscription/subscription";
 import "./components/footer/footer";
 import "./components/underFooter/underFooter";
-import "./mixins/dropdownMenu/dropdownMenu";
+import "./mixins/dropdown/dropdownMenu/dropdownMenu";
+import "./mixins/dropdown/dropdown";
+import "./mixins/radioGroup/radioGroup";
+import "./mixins/toggle/toggle";
 
-console.log('show')
+console.log("show");
 
-const heading = document.createElement('h6')
-heading.textContent = 'Как интересно!'
+const heading = document.createElement("h6");
+heading.textContent = "Как интересно!";
 
 // добавляем заголовок в DOM
-const root = document.getElementsByTagName('h3')
-root.append(heading)
-
+const root = document.getElementsByTagName("h3");
+root.append(heading);
 
 //window.onload = function () {
- // require("./mixins/buttons/button.js");
+// require("./mixins/buttons/button.js");
 //};
-show()
-
+show();

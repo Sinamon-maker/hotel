@@ -1,7 +1,7 @@
 include ../buttons/button.pug
 include ../checkboxList/checkboxList.pug
 
-mixin expandableList(data = data={title:'expandable', list:['ggjk', 'jgjg','awef']})
+mixin expandableList(data = {title:'expandable', list:['ggjk', 'jgjg','awef']})
   .expandable-list.expandable-list_opened
     +checkboxList(data)
     +buttonMixin({kind:'dropdown_down', text:''})

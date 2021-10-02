@@ -1,0 +1,9 @@
+include ../inputWithButton/inputWithButton.pug
+include ../dropdown/dropdownMenu/dropdownMenu.pug
+
+mixin dropdown(data={btn:{kind:'dropdown_down'}})
+  .dropdown.dropdown-expanded
+    +inputWithButton({btn:data.btn})
+    +dropdownMenu()
+
+

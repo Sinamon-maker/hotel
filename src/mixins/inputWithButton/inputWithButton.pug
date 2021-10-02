@@ -3,6 +3,10 @@ include ../buttons/button.pug
 
 // kind:'dropdown_up', type:'text'
 mixin inputWithButton(data = {btn: {kind:'forward'}, input:{placeholder:'Email', type:'email', name:'email'}})
+
+  -var inputData = data.input||{}
+  -var btnData = data.btn||{}
+
   .subscribe-content(tabindex=1)
-    +input(data.input)
+    +input(btnData)
     +buttonMixin(data.btn)

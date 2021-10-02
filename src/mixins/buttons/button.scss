@@ -138,40 +138,42 @@
 }
 
 .btn_forward{
- width: 2.5rem;
+  margin-right: 1rem;
+
+  width: 2.5rem;
   height: 2.5rem;
   background-color: white;
-  position: relative;
+  @include flex();
 }
 
 .btn_forward::after{
-  position: absolute;
   content: url('./images/arrow_forward(2).svg');
-  top: 15%;
-  right: 18%;
 }
 
 .btn_dropdown_up{
+margin-right: 1rem;
   background-color: white;
-width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
   @include flex();
 }
 
 .btn_dropdown_up::after{
-  content: url('./images/expand_more.svg');
+  content: url('./images/expand_more(2).svg');
 }
 
 .btn_dropdown_down{
-   background-color: white;
-width: 2rem;
-  height: 2rem;
+  margin-right: 1rem;
+ 
+ background-color: white;
+ width: 2.5rem;
+  height: 2.5rem;
  @include flex();
 }
 
 .btn_dropdown_down::after{
 
-  content: url('./images/expand_more(2).svg');
+  content: url('./images/expand_more.svg');
 }
 
 .btn_star{
