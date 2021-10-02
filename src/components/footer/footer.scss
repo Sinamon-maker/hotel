@@ -1,0 +1,36 @@
+@import "../../style.scss";
+
+.footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 7rem;
+  background-color: white;
+.label{
+  display: none;
+}
+}
+.footer_mobile{
+  height: 36.7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .label{
+  display: inline-block;
+}
+.footer__text,
+.footer__logos{
+  margin-top: 2rem;
+}
+
+}
+.footer__text{
+  line-height: 1.7rem;
+}
+.footer__logos{
+  img{
+    margin-left: 2rem;
+  }
+}

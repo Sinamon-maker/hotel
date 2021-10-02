@@ -16,6 +16,7 @@ include components/header/header.pug
 include mixins/input/input.pug
 include mixins/inputWithButton/inputWithButton.pug
 include mixins/subscription/subscription.pug
+include components/footer/footer.pug
 
 doctype html
 html
@@ -37,7 +38,7 @@ h3 test pug
 +header()
 +input({placeholder:'name'})
 +inputWithButton()
-+subscription()
++footer()
 script
       include ./index.js
 
