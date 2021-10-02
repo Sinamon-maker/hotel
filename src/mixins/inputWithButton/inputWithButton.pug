@@ -1,0 +1,8 @@
+include ../input/input.pug
+include ../buttons/button.pug
+
+// kind:'dropdown_up', type:'text'
+mixin inputWithButton(data = {btn: {kind:'forward'}, input:{placeholder:'Email', type:'email', name:'email'}})
+  .subscribe-content(tabindex=1)
+    +input(data.input)
+    +buttonMixin(data.btn)

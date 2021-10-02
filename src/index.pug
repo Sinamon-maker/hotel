@@ -14,7 +14,8 @@ include mixins/label/label.pug
 include mixins/container/container.pug
 include components/header/header.pug
 include mixins/input/input.pug
-include mixins/subscribeInput/subscribeInput.pug
+include mixins/inputWithButton/inputWithButton.pug
+include mixins/subscription/subscription.pug
 
 doctype html
 html
@@ -35,7 +36,8 @@ h3 test pug
   div kjkjhaldhjadhaljkkkkkkkkchjaklchklachaklch
 +header()
 +input({placeholder:'name'})
-+subscribeInput()
++inputWithButton()
++subscription()
 script
       include ./index.js
 

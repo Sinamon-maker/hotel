@@ -1,0 +1,8 @@
+include ../listHeading/listHeading.pug
+include ../inputWithButton/inputWithButton.pug
+
+mixin subscription()
+  .subscription
+    +listHeading('Подписка')
+    p.subsription__text Получайте специальные предложения и новости сервиса
+    +inputWithButton()

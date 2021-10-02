@@ -15,7 +15,8 @@ import "./mixins/label/label";
 import "./mixins/container/container";
 import "./components/header/header";
 import "./mixins/input/input";
-import "./mixins/subscribeInput/subscribeInput";
+import "./mixins/inputWithButton/inputWithButton";
+import "./mixins/subscription/subscription";
 
 console.log('show')
 
