@@ -1,0 +1,28 @@
+@import "../../style.scss";
+
+.dropdown-menu{
+   @extend %list;
+   padding-left: 1.5rem;
+   padding-right: 0.7rem;
+  border: 1px solid $dark50;
+  border-bottom-right-radius: 2px;
+   border-bottom-left-radius: 2px;
+
+  .list-item_expanded{
+    justify-content: space-between;
+    align-items: center;
+     }
+
+    .list-item_expanded:last-child{
+      margin-bottom: 0.7rem;
+    }
+}
+
+.dropdown-menu__amount{
+  display: flex;
+
+.dropdown-menu__counter{
+  margin-left: 0.7rem;
+  margin-right: 0.7rem;
+}
+}

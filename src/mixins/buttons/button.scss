@@ -99,20 +99,18 @@
 }
 
 .btn_unbordered{
-background-color: transparent;
-text-transform: uppercase;
-
-@include fonts(1.2rem,700 ,1.5rem, $color-purple );
+ background-color: transparent;
+ text-transform: uppercase;
+ @include fonts(1.2rem,700 ,1.5rem, $color-purple );
+ padding-left: 0;
+ padding-right: 0;
 }
-
 .btn_unbordered:disabled{
   color: $dark50;
 }
 
 .btn_round{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex();
   width: 3rem;
   height: 3rem;
   border-radius: 70%;

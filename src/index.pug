@@ -18,6 +18,7 @@ include mixins/inputWithButton/inputWithButton.pug
 include mixins/subscription/subscription.pug
 include components/footer/footer.pug
 include components/underFooter/underFooter.pug
+include mixins/dropdownMenu/dropdownMenu.pug
 
 doctype html
 html
@@ -33,8 +34,8 @@ h3 test pug
 +header()
 +input({placeholder:'name'})
 +inputWithButton()
-+footer()
-+underFooter()
++checkboxList()
++dropdownMenu()
 script
       include ./index.js
 

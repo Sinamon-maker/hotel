@@ -19,6 +19,7 @@ import "./mixins/inputWithButton/inputWithButton";
 import "./mixins/subscription/subscription";
 import "./components/footer/footer";
 import "./components/underFooter/underFooter";
+import "./mixins/dropdownMenu/dropdownMenu";
 
 console.log('show')
 

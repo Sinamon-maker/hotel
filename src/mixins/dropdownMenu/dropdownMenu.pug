@@ -1,0 +1,18 @@
+include ../buttons/button.pug
+include ../listItem/listItem.pug
+
+mixin dropdownMenu(data = {values:[{text:' спальни', amount:0},{text:' кровати', amount:0}, {text:' ванные комнаты', amount:0}], btns: true})
+  -var values = data.values
+  ul.dropdown-menu
+    each val in values
+      +listItem()
+        h3.dropdown-menu__value=val.text
+        .dropdown-menu__amount
+          +buttonMixin({kind:'round',option:'round-minus'})
+          h3.dropdown-menu__counter=val.amount
+          +buttonMixin({kind:'round', option:'round-add'})
+    if data.btns
+      +listItem()
+        +buttonMixin({kind:'unbordered', disapled:true, text:'Отменить'})
+        +buttonMixin({kind:'unbordered', text:'Применить'})
+
