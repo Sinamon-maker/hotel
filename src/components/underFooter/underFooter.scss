@@ -1,0 +1,16 @@
+@import "../../style.scss";
+
+.underfooter{
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  height: 37.2rem;
+  padding-top: 10.4rem;
+
+
+  .underfooter__logo,
+  .subscription{
+    max-width: 26rem;
+
+  }
+  }

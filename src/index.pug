@@ -17,6 +17,7 @@ include mixins/input/input.pug
 include mixins/inputWithButton/inputWithButton.pug
 include mixins/subscription/subscription.pug
 include components/footer/footer.pug
+include components/underFooter/underFooter.pug
 
 doctype html
 html
@@ -27,18 +28,13 @@ title Webpack app
 
 body
 h3 test pug
-+bulletList()
-+simpleList()
-+label()
-+buttonMixin({kind: 'gradiented', text: 'Зарегистрироваться'})
-+buttonMixin({kind: 'gradiented_bordered', text: 'Pfhtuhhh'})
-+container()
-  h3 kjhkjhkhkhjk
-  div kjkjhaldhjadhaljkkkkkkkkchjaklchklachaklch
+
++header()
 +header()
 +input({placeholder:'name'})
 +inputWithButton()
 +footer()
++underFooter()
 script
       include ./index.js
 

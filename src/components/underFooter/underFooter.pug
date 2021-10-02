@@ -1,0 +1,19 @@
+include ../../mixins/container/container.pug
+include ../../mixins/label/label.pug
+include ../../mixins/subscription/subscription.pug
+include ../../mixins/simpleList/simpleList.pug
+
+mixin underFooter()
+  +container()
+    .underfooter
+      .underfooter__logo
+        +label()
+        p.underfooter__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации "Отельные взгляды"
+      .underfooter__list
+        +simpleList()
+      .underfooter__list
+        +simpleList()
+      .underfooter__list
+        +simpleList()
+      .underfooter__list
+        +subscription()
