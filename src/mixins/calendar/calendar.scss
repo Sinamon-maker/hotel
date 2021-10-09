@@ -1,0 +1,22 @@
+@import "../../style.scss";
+
+.calendar{
+  border: 1px solid $dark25;
+  border-radius: 0.4rem;
+  padding: 2rem;
+  background-color: white;
+}
+
+.calendar__header{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 3rem;
+}
+
+
+
+.calendar__footer{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}

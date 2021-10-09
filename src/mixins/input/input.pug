@@ -6,6 +6,7 @@ mixin input(data)
   - var placeholder = data.placeholder||''
   - var tabindex = data.tabindex||false
   - var autofocused = data.autofocused||false
+  - var id = data.id||''
 
 
   input(class="input"
@@ -14,4 +15,5 @@ mixin input(data)
    value = value
    placeholder = placeholder
    tabindex = tabindex
-   autofocused = autofocused)
+   autofocused = autofocused
+   id = id)

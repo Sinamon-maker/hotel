@@ -76,7 +76,7 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: `${__dirname}/src/assets/images`,
+          from: `${__dirname}/src/images`,
           to: "images",
           noErrorOnMissing: true,
         },

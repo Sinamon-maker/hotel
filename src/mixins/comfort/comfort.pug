@@ -1,0 +1,12 @@
+mixin comfort(data= {url:'./images/image.png', title:'jhjhj',text:'kjhjkhjkhlkjfglkjgfd'})
+
+ -var picture = data.url
+  .comfort
+    .comfort__img
+      img(src = picture)
+    .comfort__content
+      if data.title
+        p.comfort__title= data.title
+        p.comfort__text=data.text
+      else
+        p.comfort__text=data.text

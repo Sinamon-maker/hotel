@@ -23,8 +23,15 @@ import "./mixins/dropdown/dropdownMenu/dropdownMenu";
 import "./mixins/dropdown/dropdown";
 import "./mixins/radioGroup/radioGroup";
 import "./mixins/toggle/toggle";
+import "./mixins/comfort/comfort";
+import "./mixins/inputData/inputData";
+import "./mixins/calendarWithData/calendarWithData";
 
-console.log("show");
+//import "./mixins/calendar/calendarContent/calendarContent";
+import "./mixins/calendar/calendar";
+//import fill from "./mixins/calendar/calendarContent/calendarContent";
+//import fillo from "./mixins/calendar/calendar";
+
 
 const heading = document.createElement("h6");
 heading.textContent = "Как интересно!";
@@ -37,3 +44,5 @@ root.append(heading);
 // require("./mixins/buttons/button.js");
 //};
 show();
+//fill()
+//fillo()

@@ -1,5 +1,5 @@
-<!DOCTYPE html><html></html><head><script defer="defer" src="/./js/main.81983396f58a7a364e17.js"></script><link href="/css/main.css" rel="stylesheet"></head><meta charset="utf-8"><meta name="viewport" content="initial-scale=1,width=device-width"><title>Webpack app</title><body></body><h3>test pug</h3><h3 class="list-heade">bullet list</h3><ul class="bullet-list"><li class="list-item_expanded"><div class="bullet-list__text">Нельзя с питомцами</div></li><li class="list-item_expanded"><div class="bullet-list__text">Без вечеринок и мероприятий</div></li><li class="list-item_expanded"><div class="bullet-list__text">Время прибытя - после 13:00,<br>а выезд до 12:00</div></li></ul><h3 class="title-list_simple">jjkjkh</h3><ul class="list-simple"><li class="list-simple__text">fdff</li><li class="list-simple__text">sadw</li><li class="list-simple__text">effsf</li><li class="list-simple__text">efwfefdfdf</li></ul><div class="logos">hjfjhgjfggjhhfjf</div><img src="./images/image(1).jpg"><script>import './style.scss'
-import show from './mixins/buttons/button'
+<!-- kind:'dropdown_up', type:'text'--><!-- kind:'dropdown_up', type:'text'--><!DOCTYPE html><html></html><head><script defer="defer" src="/./js/main.2b7d14b765031fbe16ba.js"></script><link href="/css/main.css" rel="stylesheet"></head><meta charset="utf-8"><meta name="viewport" content="initial-scale=1,width=device-width"><title>Webpack app</title><body></body><h3>test pug</h3><div class="dropdown dropdown-expanded"><div class="subscribe-content" tabindex="1"><input class="input" type="text" name="name" value="" placeholder=""><button class="btn btn_dropdown_down" type="button" name="name"></button></div><ul class="dropdown-menu"><li class="list-item_expanded"><h3 class="dropdown-menu__value">спальни</h3><div class="dropdown-menu__amount"><button class="btn btn_round btn_round-minus" type="button" name="name"></button><h3 class="dropdown-menu__counter">0</h3><button class="btn btn_round btn_round-add" type="button" name="name"></button></div></li><li class="list-item_expanded"><h3 class="dropdown-menu__value">кровати</h3><div class="dropdown-menu__amount"><button class="btn btn_round btn_round-minus" type="button" name="name"></button><h3 class="dropdown-menu__counter">0</h3><button class="btn btn_round btn_round-add" type="button" name="name"></button></div></li><li class="list-item_expanded"><h3 class="dropdown-menu__value">ванные комнаты</h3><div class="dropdown-menu__amount"><button class="btn btn_round btn_round-minus" type="button" name="name"></button><h3 class="dropdown-menu__counter">0</h3><button class="btn btn_round btn_round-add" type="button" name="name"></button></div></li><li class="list-item_expanded"><button class="btn btn_unbordered" type="button" name="name">Отменить</button><button class="btn btn_unbordered" type="button" name="name">Применить</button></li></ul></div><div class="radio-group"><div class="radio-group__content radio-group__checked"><input class="radio-group__input" type="radio" name="пол" id="women" value="женщины"></div><label class="radio-group__label" for="women">Женщины</label><div class="radio-group__content"><input class="radio-group__input" type="radio" name="пол" id="men" value="женщины"></div><label class="radio-group__label" for="men">Мужчины</label></div><ul class="dropdown-menu"><li class="list-item_expanded"><h3 class="dropdown-menu__value">спальни</h3><div class="dropdown-menu__amount"><button class="btn btn_round btn_round-minus" type="button" name="name"></button><h3 class="dropdown-menu__counter">0</h3><button class="btn btn_round btn_round-add" type="button" name="name"></button></div></li><li class="list-item_expanded"><h3 class="dropdown-menu__value">кровати</h3><div class="dropdown-menu__amount"><button class="btn btn_round btn_round-minus" type="button" name="name"></button><h3 class="dropdown-menu__counter">0</h3><button class="btn btn_round btn_round-add" type="button" name="name"></button></div></li><li class="list-item_expanded"><h3 class="dropdown-menu__value">ванные комнаты</h3><div class="dropdown-menu__amount"><button class="btn btn_round btn_round-minus" type="button" name="name"></button><h3 class="dropdown-menu__counter">0</h3><button class="btn btn_round btn_round-add" type="button" name="name"></button></div></li><li class="list-item_expanded"><button class="btn btn_unbordered" type="button" name="name">Отменить</button><button class="btn btn_unbordered" type="button" name="name">Применить</button></li></ul><div class="comfort"><div class="comfort__img"><img src="./images/image.png"></div><div class="comfort__content"><p class="comfort__title">jhjhj</p><p class="comfort__text">kjhjkhjkhlkjfglkjgfd</p></div></div><div class="expandable-list expandable-list_opened"><h3 class="list-heade">expandable</h3><ul class="list-checkboxes"><li class="list-item_expanded"><div class="checkbox_wrapper checkbox_selected"><input class="checkbox"></div><div class="list-checkboxes__text">ggjk</div></li><li class="list-item_expanded"><div class="checkbox_wrapper checkbox_selected"><input class="checkbox"></div><div class="list-checkboxes__text">jgjg</div></li><li class="list-item_expanded"><div class="checkbox_wrapper checkbox_selected"><input class="checkbox"></div><div class="list-checkboxes__text">awef</div></li></ul><button class="btn btn_dropdown_down" type="button" name="name"></button></div><div class="subscribe-content" tabindex="1"><input class="input" type="text" name="name" value="" placeholder=""><button class="btn btn_forward" type="button" name="name"></button></div><div class="calendar-content" data-calendar="calendar"></div><div class="calendar"><div class="calendar__header"></div><div class="calendar__footer"></div></div><script>import "./style.scss";
+import show from "./mixins/buttons/button";
 import "./mixins/rateButtons/ratebuttons";
 import "./mixins/list/list";
 import "./mixins/listItem/listItem";
@@ -12,18 +12,33 @@ import "./mixins/bulletList/bulletList";
 import "./mixins/expandableList/expandableList";
 import "./mixins/simpleList/simpleList";
 import "./mixins/label/label";
+import "./mixins/container/container";
+import "./components/header/header";
+import "./mixins/input/input";
+import "./mixins/inputWithButton/inputWithButton";
+import "./mixins/subscription/subscription";
+import "./components/footer/footer";
+import "./components/underFooter/underFooter";
+import "./mixins/dropdown/dropdownMenu/dropdownMenu";
+import "./mixins/dropdown/dropdown";
+import "./mixins/radioGroup/radioGroup";
+import "./mixins/toggle/toggle";
+import "./mixins/comfort/comfort";
 
-console.log('show')
+import "./mixins/calendar/calendarContent/calendarContent";
+import "./mixins/calendar/calendar";
+import fill from "./mixins/calendar/calendarContent/calendarContent";
 
-const heading = document.createElement('h6')
-heading.textContent = 'Как интересно!'
+
+const heading = document.createElement("h6");
+heading.textContent = "Как интересно!";
 
 // добавляем заголовок в DOM
-const root = document.getElementsByTagName('h3')
-root.append(heading)
-
+const root = document.getElementsByTagName("h3");
+root.append(heading);
 
 //window.onload = function () {
- // require("./mixins/buttons/button.js");
+// require("./mixins/buttons/button.js");
 //};
-show()</script>
+show();
+fill()</script>

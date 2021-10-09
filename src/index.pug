@@ -5,6 +5,11 @@ include mixins/inputWithButton/inputWithButton.pug
 include mixins/dropdown/dropdown.pug
 include mixins/radioGroup/radioGroup.pug
 include mixins/toggle/toggle.pug
+include mixins/comfort/comfort.pug
+include mixins/calendar/calendarContent/calendarContent.pug
+include mixins/calendar/calendar.pug
+include mixins/inputData/inputData.pug
+include mixins/calendarWithData/calendarWithData.pug
 
 doctype html
 html
@@ -21,10 +26,11 @@ h3 test pug
 +dropdown()
 +radioGroup()
 +dropdownMenu()
-
++comfort()
 +expandableList()
 +inputWithButton()
-+dropdown()
++calendarWithData()
+
 script
       include ./index.js
 

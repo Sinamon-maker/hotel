@@ -1,0 +1,12 @@
+@import "../../style.scss";
+
+.calendar-group{
+  position: relative;
+  width: 100%;
+
+  .calendar{
+    position: absolute;
+    top: 8rem;
+    z-index: 10;
+  }
+}

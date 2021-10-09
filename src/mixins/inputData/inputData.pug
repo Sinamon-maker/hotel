@@ -1,0 +1,18 @@
+include ../input/input.pug
+include ../inputWithButton/inputWithButton.pug
+include ../listHeading/listHeading.pug
+
+mixin inputData(data={})
+
+  - var first = data.labelFirst ||'прибытие'
+  - var second = data.labelFirst ||'выезд'
+
+  .data-group
+    .data-group__item
+      label.data-group__label(for="first")
+        +listHeading(first)
+        +inputWithButton({btn:{kind:'dropdown_down'}, input: {placeholder: 'ДД.ММ.ГГГГ',id:'first'}})
+    .data-group__item
+      label.data-group__label(for="second")
+        +listHeading(second)
+        +inputWithButton({btn:{kind:'dropdown_down'}, input: {placeholder: 'ДД.ММ.ГГГГ', id:'second'}})

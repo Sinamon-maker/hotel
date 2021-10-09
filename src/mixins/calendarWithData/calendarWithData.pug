@@ -1,0 +1,7 @@
+include ../inputData/inputData.pug
+include ../calendar/calendar.pug
+
+mixin calendarWithData()
+  .calendar-group(id="calendar-group")
+    +inputData()
+    +calendar()

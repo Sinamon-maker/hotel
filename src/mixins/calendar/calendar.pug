@@ -1,0 +1,17 @@
+include ../buttons/button.pug
+include ../listHeading/listHeading.pug
+include ../calendar/calendarContent/calendarContent.pug
+
+
+mixin calendar()
+
+  .calendar
+    .calendar__header(data-month="title-month")
+      +buttonMixin({kind:'forward', text:''})
+      +listHeading('Апрель')
+      +buttonMixin({kind:'forward', text:''})
+    +calendarContent()
+    .calendar__footer
+      +buttonMixin({kind:'unbordered', text:'Очистить'})
+      +buttonMixin({kind:'unbordered', text:'Применить'})
+

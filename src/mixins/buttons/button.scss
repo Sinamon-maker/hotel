@@ -79,6 +79,10 @@
 
   }
 
+  .btn_page:disabled{
+    opacity: 0.5;
+  }
+
   .btn_page-choosed{
     font-weight: 700;
     color: white;
@@ -164,7 +168,7 @@ margin-right: 1rem;
 
 .btn_dropdown_down{
   margin-right: 1rem;
- 
+
  background-color: white;
  width: 2.5rem;
   height: 2.5rem;

@@ -1,0 +1,8 @@
+mixin calendarContent()
+  -var values = ['Пн', 'Вт', 'Сп', 'Чт', 'Пт', 'Сб', 'Вс']
+  .calendar-content
+   ul.calendar-content__weeks
+      each val in values
+        li.calendar-content__item-week=val
+          span.calendar-content__dayweek
+  .calendar-content__btns(data-calendar ="calendar")

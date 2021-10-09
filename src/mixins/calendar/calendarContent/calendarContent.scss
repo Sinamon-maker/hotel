@@ -1,0 +1,50 @@
+@import "../../../style.scss";
+
+.calendar-content{
+   width: 100%;
+}
+
+
+
+.calendar-content__weeks{
+ @extend %list;
+ display: flex;
+justify-content: space-around;
+ 
+ @include fonts(1.2rem, 700, 1.463rem, $color-purple);
+ padding-bottom: 0.5rem;
+ padding-top: 0.5rem;
+}
+
+.calendar-content__item-week{
+   @extend %list-item;
+     @include flex();
+  width: 14.25%;
+  height: 4rem;
+}
+
+.calendar-content__btns{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 22rem;
+
+}
+
+
+.calendar-content__item{
+ width: 14.25%;
+   @include flex();
+}
+
+.btn_page:disabled{
+
+}
+   .btn_page-data{
+     background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+     color: white;
+   }
+   .btn_page-choosed{
+color: white;
+background-color: $color-purple;
+   }
