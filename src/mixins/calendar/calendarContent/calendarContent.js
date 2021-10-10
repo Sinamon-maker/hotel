@@ -1,10 +1,13 @@
 import "./calendarContent.scss";
 
-export let leftDate = false;
-export let rightDate = true;
+import {leftData, rightData} from '../../calendarWithData/calendarWithData'
+
+//export let leftDate = false;
+//export let rightDate = true;
 export let arrivalDate = '';
 export let leaveDate = '';
 
+let uniqueId= '';
 
 export let date = new Date();
 export let year = date.getFullYear();
@@ -13,14 +16,17 @@ const dayWeek = new Date(year, month, 1).getDay();
 const timeFirst = +new Date(year, month, 1);
 const dayInMilliseconds = 1000 * 24 * 60 * 60;
 
-createCalendarContent();
+createCalendarContent(uniqueId);
 
-fill(dayWeek, timeFirst, month);
+fill(dayWeek, timeFirst, month, uniqueId='');
 
 export default function fill( dayWeek, timeFirst, month) {
-  const calendar = document.querySelector('div[data-calendar = "calendar"]');
+  const data = `calendar${uniqueId}`;
+  const calendar = document.querySelector(`div[data-calendar = ${data}]`);
 
-  const newButtons = Array.from(calendar.children).map((it,index)=> document.getElementById(index));
+  const newButtons = Array.from(calendar.children).map((it, index) =>
+    document.getElementById(index + uniqueId)
+  );
 
   let index = 0
   let arr = [];
@@ -39,35 +45,39 @@ export default function fill( dayWeek, timeFirst, month) {
 
     clearAttributes(newButtons[index]);
     addAttributes(newButtons[index], arr, month);
-    addClick(newButtons[index], arr);
+    addClick(newButtons[index], arr, index, uniqueId);
     index += 1;
   }
 
 }
 
 
-function createCalendarContent(){
-  const calendar = document.querySelector('div[data-calendar = "calendar"]');
-  const array = new Array(35).fill(0)
+function createCalendarContent(uniqueId) {
+  const data = `calendar${uniqueId}`;
+  const calendar = document.querySelector(
+    `div[data-calendar = ${data}]`
+  );
 
-  array.forEach((it,index) => {
-    createCalendarButton(it,index, calendar);
-  })
+  console.log('calendarContent', calendar,data)
+  const array = new Array(35).fill(0);
+
+  array.forEach((it, index) => {
+    createCalendarButton(it, index, calendar, uniqueId);
+  });
 }
 
 
-function createCalendarButton(it, index, calendar) {
+function createCalendarButton(it, index, calendar, uniqueId) {
   const btn = document.createElement("div");
   btn.classList.add("calendar-content__item");
   const button = document.createElement("button");
   button.classList.add("btn");
   button.classList.add("btn_page");
-  button.setAttribute("id", index);
+  button.setAttribute("id", index + uniqueId);
   button.innerHTML = it;
 
   btn.appendChild(button);
   calendar.appendChild(btn);
-
 }
 
 function clearAttributes(element){
@@ -79,12 +89,24 @@ function clearAttributes(element){
 }
 
 function addAttributes(element,arr,month){
-if (new Date(arr[arr.length - 1]).getDate() === arrivalDate) {
+if (
+  new Date(arr[arr.length - 1]).getDate() ===
+    +new Date(arrivalDate).getDate() &&
+  +new Date(arrivalDate).getMonth() === month
+) {
   element.classList.add("btn_page-choosed");
+  element.setAttribute("data-first", "first");
+}
+if (
+  new Date(arr[arr.length - 1]).getDate() === +new Date(leaveDate).getDate() &&
+  +new Date(leaveDate).getMonth() === month
+) {
+  element.classList.add("btn_page-choosed");
+  element.setAttribute("data-second", "second");
 }
 if (
   +new Date(arr[arr.length - 1]).getDate() === +new Date().getDate() &&
-  +new Date(arr[arr.length - 1]).getMonth() === +new Date().getDate()
+  +new Date(arr[arr.length - 1]).getMonth() === +new Date().getMonth()
 ) {
   element.classList.add("btn_page-data");
 }
@@ -92,49 +114,72 @@ if (new Date(arr[arr.length - 1]).getMonth() !== month) {
   element.setAttribute("disabled", "disabled");
 }
 element.innerHTML = new Date(arr[arr.length - 1]).getDate();
-if (
-  element.innerHTML === +new Date(leaveDate).getDate() &&
-  +new Date(leaveDate).getMonth() === month
-) {
-   element.classList.add("btn_page-choosed");
-   element.setAttribute("data-second", "second");
-}
-if (
-  element.innerHTML === +new Date(arrivalDate).getDate() &&
-  +new Date(arrivalDate).getMonth() === month
-) {
-   element.classList.add("btn_page-choosed");
-   element.setAttribute("data-first", "first");
-}
+
 
 }
 
 
-function addClick(element,arr){
-  element.addEventListener("click", function(){createDates(element, arr)});
+function addClick(element, arr, index, uniqueId) {
+  element.addEventListener("click", function () {
+    createDates(element, arr, index, uniqueId);
+  });
 }
 
-function createDates(element,arr){
-  if(leftDate){
-    arrivalDate = +new Date(arr[arr.length - 1]);
-    const oldElement = document.querySelector('button[data-first = "first"]');
+function createDates(element, arr, index, uniqueId) {
+  if (leftData) {
+    if (leaveDate && leaveDate > + new Date(arr[index]) || !leaveDate){
+
+      arrivalDate = +new Date(arr[index]);
+
+      const oldElement = document.querySelector(
+      `button[data-first = first${uniqueId}]`
+      );
       if (oldElement) {
-        oldElement.removeAttribute("data-first")
+        oldElement.removeAttribute("data-first");
         oldElement.classList.remove("btn_page-choosed");
-      };
-    element.classList.add("btn_page-choosed");
-    element.setAttribute("data-first", "first");
+      }
+      element.classList.add("btn_page-choosed");
+      element.setAttribute("data-first", "first" + uniqueId);
+
+      const firstInput = document.getElementById(
+        `first-calendar-input${uniqueId}`
+      );
+
+      if(firstInput){
+
+        firstInput.value = transformDate(arrivalDate);
+      }
+    }
   }
-  if (rightDate) {
-    leaveDate = +new Date(arr[arr.length - 1]);
-    const oldElement = document.querySelector('button[data-second = "second"]');
-    if (oldElement) {
-      oldElement.removeAttribute("data-second")
-      oldElement.classList.remove("btn_page-choosed")
-    };
+
+  if (rightData) {
+    if ((arrivalDate && arrivalDate < +new Date(arr[index])) || !arrivalDate){
+      leaveDate = +new Date(arr[index]);
+      const oldElement = document.querySelector(
+      `button[data-second = second${uniqueId}]`
+      );
+      if (oldElement) {
+        oldElement.removeAttribute("data-second");
+        oldElement.classList.remove("btn_page-choosed");
+      }
+      element.classList.add("btn_page-choosed");
+      element.setAttribute("data-second", "second" + uniqueId);
+      const data = 'second-calendar-input';
+      const secondInput = document.querySelector(`#${data}${uniqueId}`);
+
+      if(secondInput){
+
+        secondInput.value = transformDate(leaveDate);
+      }
+    }
   }
-  element.classList.add("btn_page-choosed");
-  element.setAttribute("data-second", "second");
+}
+
+function transformDate(dataToApply) {
+  const day = new Date(dataToApply).getDate();
+  const month = new Date(dataToApply).getMonth();
+  const year = new Date(dataToApply).getFullYear();
+  return `${day}.${month + 1}.${year}`;
 }
 
 // onClick clear and add clear input value

@@ -6,13 +6,14 @@ mixin inputData(data={})
 
   - var first = data.labelFirst ||'прибытие'
   - var second = data.labelFirst ||'выезд'
+  - var uniqueId = data.uniqueId ||''
 
   .data-group
     .data-group__item
       label.data-group__label(for="first")
         +listHeading(first)
-        +inputWithButton({btn:{kind:'dropdown_down'}, input: {placeholder: 'ДД.ММ.ГГГГ',id:'first'}})
+        +inputWithButton({btn:{kind:'dropdown_down'}, input: {placeholder: 'ДД.ММ.ГГГГ',id:'first-calendar-input'+uniqueId}})
     .data-group__item
       label.data-group__label(for="second")
         +listHeading(second)
-        +inputWithButton({btn:{kind:'dropdown_down'}, input: {placeholder: 'ДД.ММ.ГГГГ', id:'second'}})
+        +inputWithButton({btn:{kind:'dropdown_down'}, input: {placeholder: 'ДД.ММ.ГГГГ', id:'second-calendar-input'+uniqueId}})

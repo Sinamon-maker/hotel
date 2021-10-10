@@ -6,7 +6,7 @@ justify-content: space-between;
 
 .data-group__item{
   min-width: 1rem;
-
+  flex-grow: 1;
   .input{
     width: 100%;
   }

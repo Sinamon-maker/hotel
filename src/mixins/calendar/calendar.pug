@@ -3,15 +3,15 @@ include ../listHeading/listHeading.pug
 include ../calendar/calendarContent/calendarContent.pug
 
 
-mixin calendar()
-
+mixin calendar(data={})
+  -var uniqueId = data.uniqueId || ''
   .calendar
-    .calendar__header(data-month="title-month")
+    .calendar__header(data-month="title-month"+uniqueId)
       +buttonMixin({kind:'forward', text:''})
       +listHeading('Апрель')
       +buttonMixin({kind:'forward', text:''})
-    +calendarContent()
-    .calendar__footer
+    +calendarContent({uniqueId})
+    .calendar__footer(data-footer="footer-data"+uniqueId)
       +buttonMixin({kind:'unbordered', text:'Очистить'})
       +buttonMixin({kind:'unbordered', text:'Применить'})
 

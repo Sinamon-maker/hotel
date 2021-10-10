@@ -1,8 +1,9 @@
-mixin calendarContent()
+mixin calendarContent(data={})
   -var values = ['Пн', 'Вт', 'Сп', 'Чт', 'Пт', 'Сб', 'Вс']
+  -var uniqueId = data.uniqueId || ''
   .calendar-content
    ul.calendar-content__weeks
       each val in values
         li.calendar-content__item-week=val
           span.calendar-content__dayweek
-  .calendar-content__btns(data-calendar ="calendar")
+  .calendar-content__btns(data-calendar ="calendar"+uniqueId)
