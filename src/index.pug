@@ -10,6 +10,9 @@ include mixins/calendar/calendarContent/calendarContent.pug
 include mixins/calendar/calendar.pug
 include mixins/inputData/inputData.pug
 include mixins/calendarWithData/calendarWithData.pug
+include forms/enterForm/enterForm.pug
+include mixins/flexExpanded/flexExpanded.pug
+include forms/formTemplate/formTemplate.pug
 
 doctype html
 html
@@ -30,6 +33,11 @@ h3 test pug
 +expandableList()
 +inputWithButton()
 +calendarWithData()
++formEnter()
++form()
+  +flexExpanded({class: 'lll'})
+    +radioGroup()
+    p klklhjlhkl
 
 script
       include ./index.js

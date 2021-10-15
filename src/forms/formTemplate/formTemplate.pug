@@ -1,0 +1,7 @@
+mixin form(data = { class: '', title: "Войти"})
+  .form-group(class=typeof data.class === "undefined" ? "" : data.class)
+    if typeof data.title ==="undefined"
+      block
+    else
+      h1.form-group__heading=data.title
+      block

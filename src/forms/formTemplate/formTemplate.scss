@@ -1,0 +1,18 @@
+@import "../../style.scss";
+
+.form-group{
+  display: flex;
+  flex-direction: column;
+
+  padding: 3rem;
+  width: 100%;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 4px;
+  box-shadow: 0px 0px 25px rgba(0,0,0,0.2);
+  max-width: 38rem;
+
+  .form-group__heading{
+    margin: 0;
+    text-transform: none;
+  }
+}

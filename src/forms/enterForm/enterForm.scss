@@ -1,0 +1,21 @@
+@import "../../style.scss";
+
+.form-enter{
+
+  .btn_expanded{
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  input[type = 'text']{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.form-enter__footer{
+  .form-enter__text{
+    @include fonts(1.4rem, 400, 1.8rem, black)
+  }
+}
+

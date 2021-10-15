@@ -1,0 +1,13 @@
+include ../../mixins/input/input.pug
+include ../../mixins/buttons/button.pug
+include ../../mixins/flexExpanded/flexExpanded.pug
+include ../formTemplate/formTemplate.pug
+
+mixin formEnter()
+  +form({ class: 'form-enter', title: "Войти"})
+    +input({placeholder: 'Email'})
+    +input({placeholder: 'Пароль', type: 'password'})
+    +buttonMixin({kind: 'expanded', text: 'Войти'})
+    +flexExpanded({class:'form-enter__footer'})
+      p.form-enter__text Нет аккаунта на на Toxin?
+      +buttonMixin({kind: 'gradiented_bordered', text: 'Создать', type: 'submit'})

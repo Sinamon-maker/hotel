@@ -50,6 +50,10 @@ body {  font-family: "Montserrat", sans-serif;
 
 }
 
+h1 {
+@include fonts(2.4rem, bold, 2.9rem, #1F2041);
+}
+
 h3 {
    @include fonts(1.2rem, bold ,1.5rem, $dark100 );
   text-transform: uppercase;

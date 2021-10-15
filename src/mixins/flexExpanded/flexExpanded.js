@@ -1,0 +1,2 @@
+import "./flexExpanded.scss";
+
