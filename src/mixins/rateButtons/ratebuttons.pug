@@ -1,10 +1,10 @@
 include ../buttons/button.pug
 
-mixin rateStars(data=[])
-
+mixin rateStars(data=4)
+  - var n = 0
+  - var m = data || 5
   .stars
-    +buttonMixin({kind:'star',option: 'star_choosed', text:''})
-    +buttonMixin({kind:'star',option: 'star_choosed', text:''})
-    +buttonMixin({kind:'star', text:''})
-    +buttonMixin({kind:'star', text:''})
-    +buttonMixin({kind:'star', text:''})
+    - for (var i=0; i<m; i++)
+      +buttonMixin({kind:'star',option: 'star_choosed', text:''})
+    - for (var j=m; j<5; j++)
+      +buttonMixin({kind:'star', text:''})

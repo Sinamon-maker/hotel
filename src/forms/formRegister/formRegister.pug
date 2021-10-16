@@ -1,0 +1,24 @@
+include ../../mixins/input/input.pug
+include ../../mixins/buttons/button.pug
+include ../../mixins/radioGroup/radioGroup.pug
+include ../../mixins/listHeading/listHeading.pug
+include ../../mixins/toggle/toggle.pug
+include ../../mixins/flexExpanded/flexExpanded.pug
+include ../formTemplate/formTemplate.pug
+
+mixin formRegister()
+  +form({ class: 'form-register', title: "Регистрация аккаунта"})
+    +input({placeholder: 'Имя'})
+    +input({placeholder: 'Фамилия'})
+    +radioGroup()
+    label.form-enter__birthdate-label(for = 'birth')
+      +listHeading("Дата Рождения")
+    +input({placeholder: 'ДД.ММ.ГГГ', id: 'birth'})
+    +listHeading("Данные для входа в сервис")
+    +input({placeholder: 'Email'})
+    +input({placeholder: 'Пароль', type: 'password'})
+    +toggle()
+    +buttonMixin({kind: 'expanded', text: 'Перейти к оплате'})
+    +flexExpanded({class:'form-register__footer'})
+      p.form-enter__text Уже есть аккаунт на Toxin?
+      +buttonMixin({kind: 'gradiented_bordered', text: 'Создать', type: 'submit'})

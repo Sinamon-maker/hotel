@@ -20,6 +20,7 @@ import "./mixins/subscription/subscription";
 import "./components/footer/footer";
 import "./components/underFooter/underFooter";
 import "./mixins/dropdown/dropdownMenu/dropdownMenu";
+import "./mixins/number/sliderButtons/sliderButtons";
 import "./mixins/dropdown/dropdown";
 import "./mixins/radioGroup/radioGroup";
 import "./mixins/toggle/toggle";
@@ -29,6 +30,7 @@ import "./mixins/calendarWithData/calendarWithData";
 import "./forms/enterForm/enterForm";
 import "./mixins/flexExpanded/flexExpanded";
 import "./forms/formTemplate/formTemplate";
+import "./forms/formRegister/formRegister";
 
 //import "./mixins/calendar/calendarContent/calendarContent";
 import "./mixins/calendar/calendar";

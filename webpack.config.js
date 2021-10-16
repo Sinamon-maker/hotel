@@ -23,7 +23,7 @@ module.exports = {
     extensions: [".js", ".json", ".pug", ".scss"],
   },
   devServer: {
-    port: 8000,
+    port: 3000,
     historyApiFallback: true,
     open: true,
     hot: true,
