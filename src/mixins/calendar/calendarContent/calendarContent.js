@@ -150,6 +150,10 @@ function createDates(element, arr, index, uniqueId) {
         firstInput.value = transformDate(arrivalDate);
       }
     }
+    if(leaveDate){
+      unFfillGap(uniqueId);
+      fillGap(uniqueId)
+    }
   }
 
   if (rightData) {
@@ -172,7 +176,12 @@ function createDates(element, arr, index, uniqueId) {
         secondInput.value = transformDate(leaveDate);
       }
     }
+     if(arrivalDate){
+      unFfillGap(uniqueId);
+      fillGap(uniqueId)
+    }
   }
+
 }
 
 function transformDate(dataToApply) {
@@ -201,4 +210,50 @@ arrivalDate = "";
     };
     leaveDate = "";
   }
+}
+
+function fillGap(uniqueId){
+  const first = document.querySelector(
+      `button[data-first = first${uniqueId}]`)
+
+  const second = document.querySelector(
+      `button[data-second = second${uniqueId}]`)
+
+      if(first && second){
+
+        first.parentNode.classList.add(`left_date${uniqueId}`);
+        let sibling = first.parentNode.nextSibling;
+
+        while(sibling.childNodes[0].id < second.id){
+
+
+sibling.classList.add(`between_date${uniqueId}`);
+          sibling = sibling.nextSibling;
+
+        }
+ second.parentNode.classList.add(`right_date${uniqueId}`);
+      }
+}
+
+function unFfillGap(uniqueId) {
+  const first = document.querySelector(`.left_date${uniqueId}`);
+  console.log('unfill',first)
+  if (first){
+   first.classList.remove(`left_date${uniqueId}`);
+  }
+  const second = document.querySelector(`.right_date${uniqueId}`);
+  if(second){
+    second.classList.remove(`right_date${uniqueId}`);
+  }
+
+  const between = document.querySelectorAll(`.between_date${uniqueId}`);
+   if (between) {
+     console.log("unfill-between", between.length);
+   }
+    if (between && between.length !== 0) {
+      for (let i = 0; i < between.length; i += 1) {
+        between[i].classList.remove(`between_date${uniqueId}`);
+      }
+    }
+
 }

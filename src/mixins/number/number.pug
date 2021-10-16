@@ -1,0 +1,21 @@
+include ../number/sliderButtons/sliderButtons.pug
+include ../rateButtons/ratebuttons.pug
+include ../flexExpanded/flexExpanded.pug
+
+mixin number()
+  .number-content
+    a.number-content__img-content
+      img.number-content__img(src = './pictures/image 2.jpg')
+    .number-content__description
+      +flexExpanded({class: 'number-content__pricing'})
+        .number-content__number
+          span.number-content__number
+        .number-content__price
+          span.number-content__price-amount 9900
+          span.number-content__price-currency P
+          span.number-content__price-text в сутки
+      +flexExpanded({class: 'number-content__rating'})
+        +rateStars(4)
+        .number-content__feedback
+          span.number-content__feedback-amount 65
+          span.number-content__feedback-text Отзывов

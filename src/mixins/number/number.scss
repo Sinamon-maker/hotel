@@ -1,0 +1,11 @@
+@import "../../style.scss";
+
+.number-content{
+  max-width: 27rem;
+  border-radius: 4px;
+  box-shadow: 0 10px 20px rgba(31,32,65,0.05);
+}
+
+.number-content__description{
+  padding: 2rem 1.7rem 2rem 2rem;
+}

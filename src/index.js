@@ -31,6 +31,7 @@ import "./forms/enterForm/enterForm";
 import "./mixins/flexExpanded/flexExpanded";
 import "./forms/formTemplate/formTemplate";
 import "./forms/formRegister/formRegister";
+import "./mixins/number/number";
 
 //import "./mixins/calendar/calendarContent/calendarContent";
 import "./mixins/calendar/calendar";

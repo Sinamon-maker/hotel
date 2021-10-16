@@ -10,7 +10,7 @@
  @extend %list;
  display: flex;
 justify-content: space-around;
- 
+
  @include fonts(1.2rem, 700, 1.463rem, $color-purple);
  padding-bottom: 0.5rem;
  padding-top: 0.5rem;
@@ -48,3 +48,21 @@ justify-content: space-around;
 color: white;
 background-color: $color-purple;
    }
+
+   .between_date{
+background-color: rgba($color-purple,0.5);
+.btn{
+  background-color: transparent;
+}
+   }
+
+    .left_date{
+background-color: rgba($color-purple,0.5);
+border-bottom-left-radius: 50%;
+border-top-left-radius: 50%;
+}
+   .right_date{
+background-color: rgba($color-purple,0.5);
+border-top-right-radius: 50%;
+border-bottom-right-radius: 50%;
+}

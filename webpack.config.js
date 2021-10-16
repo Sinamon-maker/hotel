@@ -85,6 +85,11 @@ module.exports = {
           to: "fonts",
           noErrorOnMissing: true,
         },
+        {
+          from: `${__dirname}/src/assets/pictures`,
+          to: "pictures",
+          noErrorOnMissing: true,
+        },
       ],
     }),
   ],
