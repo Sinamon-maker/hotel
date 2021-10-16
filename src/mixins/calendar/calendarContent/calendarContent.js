@@ -48,7 +48,8 @@ export default function fill( dayWeek, timeFirst, month) {
     addClick(newButtons[index], arr, index, uniqueId);
     index += 1;
   }
-
+unFfillGap(uniqueId);
+fillGap(uniqueId);
 }
 
 

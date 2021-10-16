@@ -11,6 +11,10 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: 3rem;
+
+  .btn_forward:first-child{
+    transform: rotate(180deg);
+  }
 }
 
 
