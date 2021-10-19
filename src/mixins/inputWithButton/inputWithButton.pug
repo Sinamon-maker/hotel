@@ -7,6 +7,6 @@ mixin inputWithButton(data = {btn: {kind:'forward'}, input:{placeholder:'Email',
   -var inputData = data.input||{}
   -var btnData = data.btn||{}
 
-  .subscribe-content(tabindex=1)
+  .subscribe-content(tabindex="0")
     +input(inputData)
     +buttonMixin(data.btn)

@@ -6,7 +6,7 @@ mixin buttonMixin(data={text:'12', kind:'dislike'})
    - var classes2 = data.option ? ' btn_'+data.option: ''
     -var classes = classes1+classes2
 
-    button(class=classes)(type=data.type||'button' name='name')&attributes(attributes)=data.text
+    button(class=classes)(type=data.type||'button' name='name' disabled = data.disabled || false)=data.text
 
 
 

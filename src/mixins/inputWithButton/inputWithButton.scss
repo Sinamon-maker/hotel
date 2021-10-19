@@ -16,3 +16,8 @@
     border: none;
   }
 }
+
+.subscribe-content:focus,
+.subscribe-content:hover{
+  border: 1px solid $dark50;
+}
