@@ -3,7 +3,7 @@ include ../dropdown/dropdownMenu/dropdownMenu.pug
 
 mixin dropdown(data={btn:{kind:'dropdown_down'},drop: {values:[{text:' спальни', amount:0},{text:' кровати', amount:0}, {text:' ванные комнаты', amount:0}], btns: true, id: ''}, uniqueId: ''})
   -var btn = data.btn || {kind:'dropdown_down'}
-  -var uniqueId = data.uniqueId || ''
+  -var uniqueId = 'dropdown'+data.uniqueId || '' 
   .dropdown.dropdown-expanded(id=uniqueId)
     +inputWithButton({btn:btn})
     +dropdownMenu(data.drop)
