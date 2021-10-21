@@ -27,7 +27,7 @@ justify-content: space-around;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  height: 22rem;
+  height: 21rem;
 
 }
 
@@ -44,25 +44,32 @@ justify-content: space-around;
      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
      color: white;
    }
+
    .btn_page-choosed{
-color: white;
-background-color: $color-purple;
-   }
+    color: white;
+    background-color: $color-purple;
+    }
 
    .between_date{
-background-color: rgba($color-purple,0.5);
-.btn{
-  background-color: transparent;
-}
-   }
+    background-color: rgba($color-purple,0.5);
+
+      .btn{
+       background-color: transparent;
+      }
+    }
 
     .left_date{
-background-color: rgba($color-purple,0.5);
-border-bottom-left-radius: 50%;
-border-top-left-radius: 50%;
-}
+
+     background: linear-gradient(90deg,#ffff 45%, rgba($color-purple,0.5) 50%,rgba($color-purple,0.5) 100%);
+      border-top-left-radius: 50%;
+       border-bottom-left-radius: 50%;
+
+ background-clip: content-box;
+   }
+
    .right_date{
-background-color: rgba($color-purple,0.5);
-border-top-right-radius: 50%;
-border-bottom-right-radius: 50%;
-}
+     background: linear-gradient(90deg,rgba($color-purple,0.5) 50%,rgba($color-purple,0.5) 50%,#ffff 45% );
+      border-top-right-radius: 70%;
+       border-bottom-right-radius: 70%;
+      background-clip: content-box;
+    }
