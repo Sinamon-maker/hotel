@@ -1,4 +1,3 @@
-import { stringify } from "querystring";
 import "./dropdown.scss";
 import { dropdownMenu, Menu } from "./dropdownMenu/dropdownMenu.js";
 
@@ -6,29 +5,17 @@ import { dropdownMenu, Menu } from "./dropdownMenu/dropdownMenu.js";
 
 const uniqueId = "123";
 const dropdown = document.querySelector(`#dropdown${uniqueId}`);
-
+const inputContent = dropdown.childNodes[0].childNodes[0];
 
 const id = "21";
 const menu = document.querySelector(`#dropdown-menu${id}`);
-//new Menu(menu)
 
-class DropDown extends Menu {
-  constructor(dropdown) {
-    super(menu);
-    this.dropdown = dropdown;
-    this.спальни = 0;
-    this.кровати = 0;
-    this.ванные = 0;
-    this.гости = 0;
-    this.младенцы = 0;
-    this.data = {};
-    dropdown.addEventListener("click", this.handleDropdown.bind(this));
+class TranslateDropdownContent {
+  constructor(inputContent) {
+    this.inputContent = inputContent;
   }
-  hide() {
-    this.dropdown.classList.toggle("dropdown-expanded");
-  }
+
   translate(amount) {
-    console.log("amount", amount);
     const regexp = /\d*([5-9]$|13$|11$|12$|14$|0$)/i;
     if (regexp.test(amount)) {
       return {
@@ -39,6 +26,7 @@ class DropDown extends Menu {
         кровати: "кроватей",
       };
     }
+
     if ((amount - 1) % 10 === 0) {
       return {
         гости: "гость",
@@ -58,79 +46,62 @@ class DropDown extends Menu {
   }
 
   makeInputString(data) {
-    console.log("data", data);
-    const text = Object.keys(data).reduce((acc, rec) => {
-      console.log(
-        this.translate(data[rec]),
-        rec,
-        this.translate(data[rec])[rec]
-      );
-      return acc + data[rec] + this.translate(data[rec])[rec];
+    let newData = { ...data };
+    if (data.взрослые !== 0) {
+      newData.гости = data.взрослые;
+      delete newData.взрослые;
+    }
+    if (data.дети !== 0) {
+      newData.гости = data.дети;
+      delete newData.дети;
+    }
+    if (data.взрослые !== 0 && data.дети !== 0) {
+      newData.гости = data.взрослые + data.дети;
+      delete newData.взрослые;
+      delete newData.дети;
+    }
+    if (data["ванные комнаты"] !== 0) {
+      newData.ванные = data["ванные комнаты"];
+      delete newData["ванные комнаты"];
+    }
+
+    const text = Object.keys(newData).reduce((acc, rec) => {
+      if (newData[rec] === 0) return acc;
+
+      return acc + newData[rec] + this.translate(newData[rec])[rec];
     }, "");
-    console.log(text);
+    this.inputContent.value = text;
+  }
+}
+
+class DropDown extends Menu {
+  constructor(dropdown, input) {
+    super(menu);
+    this.data = {
+      спальни: 0,
+      кровати: 0,
+      "ванные комнаты": 0,
+      дети: 0,
+      взрослые: 0,
+      младенцы: 0,
+    };
+    this.dropdown = dropdown;
+
+    this.input = input;
+    dropdown.addEventListener("click", this.handleDropdown.bind(this));
+  }
+  hide() {
+    this.dropdown.classList.toggle("dropdown-expanded");
   }
 
-  addToInput(text, amount) {
-    if (text === "спальни") {
-      this.спальни += 1;
-      this.data.спальни = this.спальни;
-    }
-    if (text === "кровати") {
-      this.кровати += 1;
-      this.data.кровати = this.кровати;
-    }
-    if (text === "ванные комнаты") {
-      this.ванные += 1;
-      this.data.ванные = this.ванные;
-    }
-    if (text === "взрослые" || text === "дети") {
-      this.гости += 1;
-      this.data.гости = this.гости;
-    }
-    if (text === "младенцы") {
-      this.младенцы += 1;
-      this.data.младенцы = this.младенцы;
-    }
-    this.makeInputString(this.data);
+  addToInput(text) {
+    this.data[text] += 1;
+    this.input.makeInputString(this.data);
   }
 
-  minusToInput(text, amount) {
-    if (text === "спальни") {
-      this.спальни -= 1;
-      this.data.спальни = this.спальни;
-      if (this.data.спальни === 0) {
-        delete this.data.спальни
-      };
-    }
-    if (text === "кровати") {
-      this.кровати -= 1;
-      this.data.кровати = this.кровати;
-      if (this.data.кровати === 0) {
-        delete this.data.кровати;
-      }
-    }
-    if (text === "ванные комнаты") {
-      this.ванные -= 1;
-      this.data.ванные = this.ванные;
-      if (this.data.ванные === 0) {
-        delete this.data.ванные;
-      }
-    }
-    if (text === "взрослые" || text === "дети") {
-      this.гости -= 1;
-      this.data.гости = this.гости;
-      if (this.data.гости === 0) {
-        delete this.data.гости;
-      }
-    }
-    if (text === "младенцы") {
-      this.младенцы -= 1;
-      this.data.младенцы = this.младенцы;
-      if (this.data.младенцы === 0) {
-        delete this.data.младенцы;
-      }
-    }
-    this.makeInputString(this.data);
+  minusToInput(text) {
+    this.data[text] -= 1 || 0;
+    this.input.makeInputString(this.data);
   }
 
   add(event) {
@@ -146,7 +117,7 @@ class DropDown extends Menu {
     let amount = event.target.nextElementSibling.innerHTML;
     let data = event.target.parentNode;
     let text = data.previousElementSibling.innerHTML;
-     this.minusToInput(text, amount);
+    this.minusToInput(text, amount);
   }
   handleDropdown(event) {
     if (event.target.classList.contains("btn_dropdown_down")) {
@@ -155,4 +126,4 @@ class DropDown extends Menu {
   }
 }
 
-new DropDown(dropdown)
+new DropDown(dropdown, new TranslateDropdownContent(inputContent));
