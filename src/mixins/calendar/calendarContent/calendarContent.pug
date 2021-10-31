@@ -1,3 +1,5 @@
+include ../../buttons/button.pug
+
 mixin calendarContent(data={})
   -var values = ['Пн', 'Вт', 'Сп', 'Чт', 'Пт', 'Сб', 'Вс']
   -var uniqueId = data.uniqueId || ''
@@ -7,3 +9,7 @@ mixin calendarContent(data={})
         li.calendar-content__item-week=val
           span.calendar-content__dayweek
   .calendar-content__btns(data-calendar ="calendar"+uniqueId)
+    - for (var i = 0; i < 35; ++i) {
+      .calendar-content__item
+        +buttonMixin({kind: 'page', text: '0'})
+    - }

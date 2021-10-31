@@ -1,0 +1,34 @@
+@import "../../style.scss";
+
+.number-cost__sighn{
+  @include fonts(1.4rem, 700, 1.7rem, #1F2041);
+}
+
+.number-cost__number{
+   @include fonts(2.4rem, 700, 3rem, #1F2041);
+   margin-left: 0.5rem;
+   margin-right: 0.5rem;
+}
+.number-cost__lux{
+  @include fonts(1.2rem, 700, 1.5rem, $color-purple);
+}
+
+.number-cost__price-item{
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.number-cost__price{
+  @include fonts(1.4rem, 700, 1.8rem, $dark50);
+  margin-right: 0.5rem;
+   vertical-align: bottom;
+}
+
+.number-cost__price::after{
+  content: '\20BD'
+}
+
+.number-cost__daily{
+ @include fonts(1.2rem, 400, 1.8rem, $dark50);
+ vertical-align: bottom;
+}

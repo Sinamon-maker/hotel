@@ -1,0 +1,18 @@
+include ../flexExpanded/flexExpanded.pug
+
+mixin numberCost(data = {number: '888', price: '9900'})
+
+  -var price = data.price || '9000'
+  -var lux = data.lux || ''
+  -var number = data.number || '888'
+
+  +flexExpanded({class:'number-cost'})
+    .number-cost__number-item
+      span.number-cost__sighn №
+      span.number-cost__number=number
+      span.number-cost__lux=люкс
+    .number-cost__price-item
+      span.number-cost__price=price
+      span.number-cost__daily в сутки
+
+

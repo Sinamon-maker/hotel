@@ -17,6 +17,7 @@ include mixins/flexExpanded/flexExpanded.pug
 include forms/formTemplate/formTemplate.pug
 include forms/formRegister/formRegister.pug
 include mixins/number/number.pug
+include mixins/numberCost/numberCost.pug
 
 doctype html
 html
@@ -39,7 +40,8 @@ h3 test pug
 +expandableList()
 +inputWithButton()
 +dropdownMenu({id:'222'})
-+calendarWithData()
++calendar()
++numberCost()
 +number()
 
 
