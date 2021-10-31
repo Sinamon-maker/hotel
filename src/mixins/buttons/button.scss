@@ -241,3 +241,23 @@ width: 4rem;
   content: url('./images/favorite_border.svg');
   margin-right: 0.5rem;
   }
+
+  .btn_slider-forth{
+    width: 4rem;
+  height: 4rem;
+@include flex();
+  }
+
+  .btn_slider-forth::after{
+     content: url('./images/expand_more3.svg');
+  }
+
+  .btn_slider-back{
+    width: 4rem;
+  height: 4rem;
+@include flex();
+  }
+
+  .btn_slider-back::after{
+     content: url('./images/expand_more4.svg');
+  }

@@ -1,11 +1,15 @@
 include ../number/sliderButtons/sliderButtons.pug
 include ../rateButtons/ratebuttons.pug
 include ../flexExpanded/flexExpanded.pug
+include ../buttons/button.pug
 
 mixin number()
   .number-content
     a.number-content__img-content
       img.number-content__img(src = './pictures/image 2.jpg')
+      img.number-content__img(src = './pictures/image 2.jpg')
+      +buttonMixin({kind: 'slider-forth'})
+      +buttonMixin({kind: 'slider-back'})
     .number-content__description
       +flexExpanded({class: 'number-content__pricing'})
         .number-content__number
