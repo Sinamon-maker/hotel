@@ -1,18 +1,23 @@
 import "./calendar.scss";
 import "./calendarContent/calendarContent";
-import {calendarContent} from "./calendarContent/calendarContent";
+import { calendarContent } from "./calendarContent/calendarContent";
 
-calendar1()
+calendar1();
 
 function calendar1(uniqueId = "") {
-  let arrivalDate = "";
-  let leaveDate = "";
+  let firstDate = null;
+  let secondDate = null;
+
+  const data = `calendar${uniqueId}`;
+  const calendar = document.querySelector(`div[data-calendar = ${data}]`);
+
+  const dayInMilliseconds = 1000 * 24 * 60 * 60;
 
   let date = new Date();
   let currentYear = date.getFullYear();
   let currentMonth = date.getMonth();
+  console.log("5555", currentYear, currentMonth);
 
-  console.log('666666',currentYear)
   let currentDay = date.getDate();
 
   let currentDataIndex;
@@ -32,7 +37,6 @@ function calendar1(uniqueId = "") {
     "Декабрь",
   ];
 
-
   calendarContent(currentYear, currentMonth);
   headerCalendar();
 
@@ -41,7 +45,7 @@ function calendar1(uniqueId = "") {
       `div[data-month=title-month${uniqueId}]`
     );
 
-    monthTitle(monthContent,currentMonth, currentYear);
+    monthTitle(monthContent, currentMonth, currentYear);
 
     monthContent.addEventListener("click", changeMonth);
 
@@ -66,6 +70,202 @@ function calendar1(uniqueId = "") {
     monthContent.children[1].innerHTML = `${MONTH[text1]} ${text2}`;
   }
 
+  function calendarContent(currentYear, currentMonth, uniqueId = "") {
+    const dayWeek = new Date(currentYear, currentMonth, 1).getDay();
+    const timeFirst = +new Date(currentYear, currentMonth, 1);
+
+    let array = fill(dayWeek, timeFirst);
+    createCalendarContent(uniqueId, array);
+
+    function fill(dayWeek, timeFirst) {
+      let index = 0;
+      let arr = [];
+
+      const firstElement = +new Date(
+        timeFirst - dayWeek * dayInMilliseconds + dayInMilliseconds
+      );
+      arr.push(firstElement);
+      index += 1;
+      while (arr.length < 35) {
+        let element = +new Date(arr[arr.length - 1] + dayInMilliseconds);
+        arr.push(element);
+        index += 1;
+      }
+      return arr;
+    }
+
+    function createCalendarContent(uniqueId, arr) {
+      const array = arr || new Array(35).fill(0);
+      const btnsArray = Array.from(calendar.children);
+clearGap();
+      array.forEach((it, index) => {
+        let element = btnsArray[index];
+
+        createCalendarButton(it, index, element);
+      });
+if (firstDate&& secondDate){
+  fillGap()
+}
+    }
+
+    function createCalendarButton(it, index, element) {
+      const button = element.children[0];
+
+      button.classList.remove("btn_page-data");
+      button.disabled = false;
+
+      // button.setAttribute("id", index + uniqueId);
+      const numb = new Date(it).getDate();
+button.innerText = numb;
+      if (new Date(it).getMonth() !== currentMonth) {
+        button.disabled = true;
+      }
+      if(isButtonChoosed(firstDate, button)){
+        button.classList.add("btn_page-choosed");
+      }
+      if (isButtonChoosed(secondDate, button)) {
+        console.log('createbutton secondDate', )
+        button.classList.add("btn_page-choosed");
+      }
+      if (
+        new Date(it).getTime() ===
+        new Date(
+          new Date().getFullYear(),
+          new Date().getMonth(),
+          new Date().getDate()
+        ).getTime()
+      ) {
+        button.classList.add("btn_page-data");
+
+        currentDataIndex = index;
+      }
+
+    }
+  }
+  calendar.addEventListener("click", HandleClick);
+
+  function HandleClick(event) {
+    if (
+      event.target.classList.contains("btn_page") &&
+      event.currentTarget.contains(event.target) &&
+      event.currentTarget === calendar
+    ) {
+
+       console.log("firstDate&& secondDate", firstDate, secondDate)
+      event.target.classList.add("btn_page-choosed")
+      let date = +new Date(currentYear, currentMonth, event.target.innerText);
+
+       console.log("0");
+      if (!firstDate){
+        console.log("2");
+        firstDate = date
+
+        return
+      }
+      if(!secondDate ){
+        if(firstDate > date){
+         secondDate = firstDate;
+          firstDate = date;
+        }
+
+        else {
+        secondDate = date;
+         }
+      fillGap()
+      console.log("3");
+      return
+            }
+if (firstDate && secondDate) {
+  secondDate = null;
+  firstDate = date;
+  clearGap();
+  event.target.classList.add("btn_page-choosed");
+  console.log("1");
+  return;
+}
+
+    }
+  }
+
+  function isButtonChoosed(date, btn) {
+    if (date) {
+
+      if (
+
+        new Date(date).getMonth() === currentMonth &&
+        new Date(date).getDate() === +btn.innerText
+      ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  function isBetween(date1, date2, btn) {
+    if (
+      new Date(date1).getMonth() === currentMonth &&
+      new Date(date2).getMonth() === currentMonth &&
+      !btn.disabled
+    ) {
+      if (
+        +btn.innerHTML < new Date(date2).getDate() &&
+        +btn.innerHTML > new Date(date1).getDate() &&
+        !btn.disabled
+      ) {
+        return true;
+      }
+    } else {
+      if (new Date(date1).getMonth() === currentMonth) {
+        if (+btn.innerHTML > new Date(date1).getDate() && !btn.disabled) {
+          return true;
+        }
+      }
+      if (new Date(date2).getMonth() === currentMonth) {
+        if (+btn.innerHTML < new Date(date2).getDate() && !btn.disabled) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  function fillGap() {
+    const btns = Array.from(calendar.childNodes).map((it) => it.childNodes[0]);
+    console.log("fillGap working", btns);
+    btns.forEach((btn) => {
+
+      if (isButtonChoosed(firstDate, btn)) {
+        btn.parentNode.classList.add("left_date");
+        console.log("fillGap working firstDate", btn.innerText, currentMonth);
+      }
+      if (isBetween(firstDate, secondDate, btn)) {
+        btn.parentNode.classList.add("between_date");
+      }
+      if (isButtonChoosed(secondDate, btn)) {
+        btn.parentNode.classList.add("right_date");
+        console.log("fillGap working secondDate", btn.innerText, currentMonth);
+      }
+
+
+    });
+  }
+
+function clearGap() {
+  console.log("fclearGap working", btns);
+  const btns = Array.from(calendar.childNodes).map((it) => it.childNodes[0]);
+  btns.forEach((btn) => {
+
+      btn.parentNode.classList.remove("left_date");
+       btn.classList.remove("btn_page-choosed");
+
+      btn.parentNode.classList.remove("right_date");
+       btn.classList.remove("btn_page-choosed");
+
+      btn.parentNode.classList.remove("between_date");
+
+  });
+}
+  //calendar.removeEventListener("click", HandleClick);
 }
 
 //setClicks(uniqueId);
