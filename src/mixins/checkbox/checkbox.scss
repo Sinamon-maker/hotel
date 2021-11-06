@@ -1,19 +1,35 @@
 @import "../../style.scss";
 
 .checkbox{
-  opacity: 0;
+opacity: 0;
 }
 
 .checkbox_wrapper{
-  width: 2rem;
+@include flex();
+ position: relative;
+  left: -2rem;
+  &::before{
+    content: '';
+width: 2rem;
   height: 2rem;
-  @include flex();
+
   border: 1px solid $dark25;
   border-radius: 4px;
-  position: relative;
+
   margin-right: 1rem;
+  }
 }
 
+.checkbox:checked+.checkbox_wrapper{
+
+
+    &::before{
+border: 1px solid $color-purple;
+ content: url('/src/images/Vector(1).svg');
+ @include flex();
+  }
+
+}
 .checkbox_selected{
   border: 1px solid $color-purple;
 

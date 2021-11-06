@@ -1,6 +1,6 @@
 import "./calendar.scss";
 import "./calendarContent/calendarContent";
-import { calendarContent } from "./calendarContent/calendarContent";
+
 
 calendar("", 1);
 

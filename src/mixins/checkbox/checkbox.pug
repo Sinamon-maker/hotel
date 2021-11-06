@@ -1,4 +1,5 @@
-mixin checkbox()
+mixin checkbox(data = {label: "guests", for:"guests"})
 
-  .checkbox_wrapper.checkbox_selected
-    input.checkbox
+
+    input(class = "checkbox",type = 'checkbox', name = data.label, id = data.for)
+    label(for=data.for, class ="checkbox_wrapper")=data.label
