@@ -9,8 +9,8 @@ mixin checkboxList(data={title:'checkbox buttons', list:['ggjk', 'jgjg','awef']}
   ul.list-checkboxes
     each val in values
       +listItem()
-        +checkbox({label: val, for: val})
-
+        +checkbox()
+        .list-checkboxes__text= val
 
 
 
