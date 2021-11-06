@@ -126,4 +126,4 @@ class DropDown extends Menu {
   }
 }
 
-new DropDown(dropdown, new TranslateDropdownContent(inputContent));
+//new DropDown(dropdown, new TranslateDropdownContent(inputContent));

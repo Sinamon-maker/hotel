@@ -1,7 +1,10 @@
 import "./calendarContent.scss";
 
 //import {leftData, rightData} from '../../calendarWithData/calendarWithData'
-
+export default function show() {
+  console.log("hi i am from calendarContent");
+}
+show();
 let arrivalDate = "";
 let leaveDate = "";
 

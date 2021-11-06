@@ -3,7 +3,7 @@ include mixins/dropdown/dropdownMenu/dropdownMenu.pug
 include mixins/number/sliderButtons/sliderButtons.pug
 include mixins/expandableList/expandableList.pug
 include mixins/inputWithButton/inputWithButton.pug
-include mixins/dropdown/dropdown.pug
+//include mixins/dropdown/dropdown.pug
 include mixins/rateButtons/ratebuttons.pug
 include mixins/radioGroup/radioGroup.pug
 include mixins/toggle/toggle.pug
@@ -30,20 +30,19 @@ body
 h3 test pug
 
 
-
-+dropdown({drop: {id: '21'}, uniqueId: '123'})
+//+dropdown({drop: {id: '21'}, uniqueId: '123'})
 +radioGroup()
 
-+comfort()
-+sliderButtons()
-+rateStars()
-+expandableList()
-+inputWithButton()
-+dropdownMenu({id:'222'})
+//+comfort()
+//+sliderButtons()
+//+rateStars()
+//+expandableList()
+//+inputWithButton()
+//+dropdownMenu({id:'222'})
 +calendar()
-+calendarWithData({uniqueId: '222'})
-+numberCost()
-+number()
++calendarWithData({uniqueId: '224'})
+//+numberCost()
+//+number()
 
 
 script

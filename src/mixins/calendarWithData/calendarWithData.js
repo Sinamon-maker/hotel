@@ -1,8 +1,8 @@
 import { calendar } from "../calendar/calendar";
 import "./calendarWithData.scss";
 
-openCloseCalendar("222", 2);
-calendar("222", 2);
+openCloseCalendar("224", 2);
+calendar("224", 2);
 function openCloseCalendar(uniqueId = '', inputAmount) {
   console.log("calendarOwner", calendarOwner);
 
