@@ -26,6 +26,7 @@ import "./mixins/radioGroup/radioGroup";
 import "./mixins/toggle/toggle";
 import "./mixins/comfort/comfort";
 import "./mixins/inputData/inputData";
+import "./mixins/calendar/calendar";
 import "./mixins/calendarWithData/calendarWithData";
 import "./forms/enterForm/enterForm";
 import "./mixins/flexExpanded/flexExpanded";

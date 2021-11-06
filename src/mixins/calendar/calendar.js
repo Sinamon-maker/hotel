@@ -2,9 +2,9 @@ import "./calendar.scss";
 import "./calendarContent/calendarContent";
 import { calendarContent } from "./calendarContent/calendarContent";
 
-calendar1("", 1);
+calendar("", 1);
 
-function calendar1(uniqueId = "", inputAmount) {
+export function calendar(uniqueId = "", inputAmount) {
   let firstDate = null;
   let secondDate = null;
 
@@ -29,10 +29,10 @@ function calendar1(uniqueId = "", inputAmount) {
     if (inputAmount === 2) {
       const firstInput = document.getElementById(
         `first-calendar-input${uniqueId}`
-      )?.children[0] ?? { value: "" };
+      ) ?? { value: "" };
       const secondInput = document.getElementById(
         `second-calendar-input${uniqueId}`
-      )?.children[0] ?? { value: "" };
+      ) ?? { value: "" };
 
       return [firstInput, secondInput];
     }
@@ -58,6 +58,15 @@ function calendar1(uniqueId = "", inputAmount) {
     }
   }
 
+  function clearInput(){
+    if (inputAmount === 2) {
+      input[0].value = '';
+      input[1].value = "";
+    } else {
+      input.value = '';
+    }
+  }
+
   function translateTime(time) {
     if (time === null) {
       return "";
@@ -77,6 +86,28 @@ function calendar1(uniqueId = "", inputAmount) {
 
   const data = `calendar${uniqueId}`;
   const calendar = document.querySelector(`div[data-calendar = ${data}]`);
+
+  const clearButton = calendar.nextElementSibling.childNodes[0]
+  const applyButton = calendar.nextElementSibling.childNodes[1];
+
+  applyButton.addEventListener("click", closeCalendar);;
+
+  function closeCalendar(){
+const calendarOwne = document.getElementById(`calendar-group${uniqueId}`);
+if (calendarOwne){
+calendarOwne.classList.toggle("calendar-group-opened");
+}
+}
+
+
+  clearButton.addEventListener('click', clearCalendar);
+
+  function clearCalendar(){
+    firstDate = null
+    secondDate = null
+    clearGap()
+    clearInput();
+  }
 
   const dayInMilliseconds = 1000 * 24 * 60 * 60;
 

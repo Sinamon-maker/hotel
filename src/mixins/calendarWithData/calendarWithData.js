@@ -1,53 +1,23 @@
-import { leaveDate, arrivalDate } from "../calendar/calendarContent/calendarContent";
+import { calendar } from "../calendar/calendar";
 import "./calendarWithData.scss";
 
-//export let leftData = true;
-//export let rightData = false
-//const uniqueId = ""
+openCloseCalendar("222", 2);
+calendar("222", 2);
+function openCloseCalendar(uniqueId = '', inputAmount) {
+  console.log("calendarOwner", calendarOwner);
+
+  const calendarOwner = document.getElementById(`calendar-group${uniqueId}`);
+ console.log("calendarOwner", calendarOwner);
+
+  calendarOwner.addEventListener('click', toggleCalendar)
 
 
-//export const firstInput = document.getElementById("first-calendar-input");
-
-//const firstOpen = firstInput.nextElementSibling
-//firstOpen.addEventListener("click", () => {firstDataClick(uniqueId);});
-
-//export const secondInput = document.getElementById("second-calendar-input");
-
-
-//const secondOpen = secondInput.nextElementSibling;
-//console.log("sibling2", secondOpen, secondInput);
-//secondOpen.addEventListener('click', ()=> {secondDataClick(uniqueId)});
-
-//function secondDataClick(uniqueId) {
- // if (leftData) {
- //   leftData = false;
- //   rightData = true;
- // }
- // if (!leftData) {
- //   rightData = true;
- //   openCalendar(uniqueId);
- // }
-//}
-
-
-//function firstDataClick(uniqueId) {
-//  if (rightData) {
- //   rightData = false;
- //   leftData = true;
- // }
- // if (!rightData) {
- //   leftData = true;
- //   openCalendar(uniqueId);
- // }
-//}
-
-//function closeCalendar(uniqueId){
- // const calendarWrapper = document.getElementById(`calendar-group${uniqueId}`)
- // calendarWrapper.classList.remove(`calendar-group-opened`);
-
-//}
-
-//function openCalendar(uniqueId){
- // const calendarWrapper = document.getElementById(`calendar-group${uniqueId}`);
- // calendarWrapper.classList.add(`calendar-group-opened`);
-//}
+  function toggleCalendar(event){
+    if (inputAmount === 2){
+      if (event.target.classList.contains("btn_dropdown_down")) {
+          this.classList.toggle("calendar-group-opened");
+        console.log(event.target, this);
+      }
+    }
+  }
+}
