@@ -6,7 +6,7 @@ mixin dropdown(uniqueId, values, btns )
   -var btns = btns || true
   -var ids = 'dropdown'+uniqueId || ''
 
-  .dropdown.dropdown-expanded(id=ids)
+  .dropdown.dropdown(id=ids)
     +inputWithButton({btn:{kind:'dropdown_down'}, input:{placeholder:'Сколько гостей', type:'text', name:'гости'}})
     +dropdownMenu(uniqueId, values, btns )
 

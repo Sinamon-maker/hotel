@@ -1,17 +1,14 @@
 include ../../mixins/calendarWithData/calendarWithData.pug
 include ../../mixins/buttons/button.pug
-include ../../mixins/rdropdown/rdropdown.pug
-include ../../mixins/flexExpanded/flexExpanded.pug
+include ../../mixins/dropdown/dropdown.pug
 include ../formTemplate/formTemplate.pug
 
 mixin findRoomForm(uniqueId)
+  -var uniqueId = uniqueId || ''
   +form({ class: 'form-find', title: "Найдем номера под ваши пожелания"})
-    +calendarWithData(uniqueId)
+    +calendarWithData(uniqueId+'23')
     +dropdown([{text:' взрослые', amount:0},{text:' дети', amount:0}, {text:' младенцы', amount:0}], true, '', uniqueId)
-    +flexExpanded({class:'form-find__footer'})
-    +flexExpanded({class:'form-find__footer'})
-    +flexExpanded({class:'form-find__footer'})
-    +buttonMixin({kind: 'gradiented_bordered', text: 'Подобрать номер', type: 'submit'})
+    +buttonMixin({kind: 'gradiented', option: 'expanded',text: 'Подобрать номер', type: 'submit'})
 
 
 

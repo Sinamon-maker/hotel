@@ -2,11 +2,29 @@ include ../input/input.pug
 include ../buttons/button.pug
 
 // kind:'dropdown_up', type:'text'
-mixin inputWithButton(data = {btn: {kind:'forward'}, input:{placeholder:'Email', type:'email', name:'email'}})
+mixin inputWithButton(data = {btn: {kind:'forward'}, input:{placeholder:'Email', type:'email', name:'email'}, btn:'', label:''})
 
-  -var inputData = data.input||{}
-  -var btnData = data.btn||{}
+  -var inputData = data.input||{placeholder:'Email', type:'email', name:'email'}
+  -var btnData = data.btn||{kind:'forward'}
 
-  .subscribe-content(tabindex="0")
+
+  if data.btn&&!data.label
+    .subscribe-content(tabindex="0")
+      +input(inputData)
+      +buttonMixin(data.btn)
+
+  if data.btn&&data.label
+    label.input-label(for=inputData.id||'')
+      +listHeading(data.label)
+      .subscribe-content(tabindex="0")
+        +input(inputData)
+        +buttonMixin(data.btn)
+
+  if !data.btn&&data.label
+    label.input-label(for=inputData.id||'')
+      +listHeading(data.label)
+      .subscribe-content(tabindex="0")
+        +input(inputData)
+
+  else
     +input(inputData)
-    +buttonMixin(data.btn)
