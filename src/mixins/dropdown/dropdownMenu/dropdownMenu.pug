@@ -1,12 +1,12 @@
 include ../../buttons/button.pug
 include ../../listItem/listItem.pug
 
-mixin dropdownMenu(data = {values:[{text:' спальни', amount:0},{text:' кровати', amount:0}, {text:' ванные комнаты', amount:0}], btns: true, id: ''})
-  -var btn = data.btns || true
-  -var id = data.uniqueId || ''
-  -var values = data.values|| [{text:' спальни', amount:0},{text:' кровати', amount:0}, {text:' ванные комнаты', amount:0}]
-  -var id = 'dropdown-menu'+ data.id || ''
-  ul.dropdown-menu(id=id)
+mixin dropdownMenu(uniqueId, values, btns)
+  -var btns = btns || true
+
+  -var values = values|| [{text:' спальни', amount:0},{text:' кровати', amount:0}, {text:' ванные комнаты', amount:0}]
+  -var uniqueId = 'dropdown-menu'+ uniqueId || ''
+  ul.dropdown-menu(id=uniqueId)
     each val in values
       +listItem()
         h3.dropdown-menu__value=val.text
@@ -18,4 +18,6 @@ mixin dropdownMenu(data = {values:[{text:' спальни', amount:0},{text:' к
       +listItem()
         +buttonMixin({kind:'unbordered', disapled:true, text:'Отменить'})
         +buttonMixin({kind:'unbordered', text:'Применить'})
+
+
 

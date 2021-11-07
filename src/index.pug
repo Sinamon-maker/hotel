@@ -1,23 +1,15 @@
 
 include mixins/dropdown/dropdownMenu/dropdownMenu.pug
-include mixins/number/sliderButtons/sliderButtons.pug
-include mixins/expandableList/expandableList.pug
+
 include mixins/inputWithButton/inputWithButton.pug
-//include mixins/dropdown/dropdown.pug
-include mixins/rateButtons/ratebuttons.pug
-include mixins/radioGroup/radioGroup.pug
-include mixins/toggle/toggle.pug
-include mixins/comfort/comfort.pug
+
+//include mixins/dropdown/dropdownMenu/dropdownMenu.pug
+include mixins/dropdown/dropdown.pug
 include mixins/calendar/calendarContent/calendarContent.pug
 include mixins/calendar/calendar.pug
 include mixins/inputData/inputData.pug
 include mixins/calendarWithData/calendarWithData.pug
-include forms/enterForm/enterForm.pug
-include mixins/flexExpanded/flexExpanded.pug
-include forms/formTemplate/formTemplate.pug
-include forms/formRegister/formRegister.pug
-include mixins/number/number.pug
-include mixins/numberCost/numberCost.pug
+
 
 doctype html
 html
@@ -30,19 +22,9 @@ body
 h3 test pug
 
 
-//+dropdown({drop: {id: '21'}, uniqueId: '123'})
-+radioGroup()
++dropdown('123')
 
-//+comfort()
-//+sliderButtons()
-//+rateStars()
-//+expandableList()
-//+inputWithButton()
-//+dropdownMenu({id:'222'})
-+calendar()
-+calendarWithData({uniqueId: '224'})
-//+numberCost()
-//+number()
+
 
 
 script

@@ -2,11 +2,11 @@ include ../input/input.pug
 include ../inputWithButton/inputWithButton.pug
 include ../listHeading/listHeading.pug
 
-mixin inputData(data={})
+mixin inputData(data)
 
-  - var first = data.labelFirst ||'прибытие'
-  - var second = data.labelFirst ||'выезд'
-  - var uniqueId = data.uniqueId ||''
+  - var first = 'прибытие'
+  - var second = 'выезд'
+  - var uniqueId = data ||''
 
   .data-group
     .data-group__item

@@ -1,16 +1,20 @@
 import "./dropdown.scss";
-import { dropdownMenu, Menu } from "./dropdownMenu/dropdownMenu.js";
+import {  Menu } from "./dropdownMenu/dropdownMenu.js";
 
 //function dropdown(uniqueId, id)
+export default function show() {
+  console.log("hi i am from dropdown");
+}
+show();
 
 const uniqueId = "123";
 const dropdown = document.querySelector(`#dropdown${uniqueId}`);
 const inputContent = dropdown.childNodes[0].childNodes[0];
 
 const id = "21";
-const menu = document.querySelector(`#dropdown-menu${id}`);
+const menu = document.querySelector(`#dropdown-menu${uniqueId}`);
 
-class TranslateDropdownContent {
+export class TranslateDropdownContent {
   constructor(inputContent) {
     this.inputContent = inputContent;
   }
@@ -74,7 +78,7 @@ class TranslateDropdownContent {
   }
 }
 
-class DropDown extends Menu {
+export class DropDown extends Menu {
   constructor(dropdown, input) {
     super(menu);
     this.data = {
@@ -126,4 +130,4 @@ class DropDown extends Menu {
   }
 }
 
-//new DropDown(dropdown, new TranslateDropdownContent(inputContent));
+new DropDown(dropdown, new TranslateDropdownContent(inputContent));

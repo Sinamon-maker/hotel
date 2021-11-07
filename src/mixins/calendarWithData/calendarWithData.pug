@@ -1,8 +1,8 @@
 include ../inputData/inputData.pug
 include ../calendar/calendar.pug
 
-mixin calendarWithData(data={uniqueId: ''})
-  -var uniqueId = data.uniqueId || ''
+mixin calendarWithData(data=uniqueId)
+  -var uniqueId = data|| ''
   .calendar-group(id="calendar-group"+uniqueId)
-    +inputData({uniqueId})
-    +calendar({uniqueId})
+    +inputData(uniqueId)
+    +calendar(uniqueId)

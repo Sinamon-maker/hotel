@@ -3,8 +3,8 @@ include ../listHeading/listHeading.pug
 include ../calendar/calendarContent/calendarContent.pug
 
 
-mixin calendar(data={})
-  -var uniqueId = data.uniqueId || ''
+mixin calendar(data)
+  -var uniqueId = data || ''
   .calendar
     .calendar__header(data-month="title-month"+uniqueId)
       +buttonMixin({kind:'forward', text:''})
